@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Archivio+Diorami</title>
+
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  	<link rel="stylesheet" type="text/css" href="CSS/style.css">
+	
+</head>
+<body>
+<style>
+	.a2:visited {
+  	color: #18171C;
+	}
+
+	.bottonearchivio:hover {
+	font-size:3vw;
+	font-family:Neue Haas Grotesk Text Pro;
+	font-weight:300;
+	text-align: center;
+	display: block;
+	width:14vw;
+	height:4vw;
+	border-radius:40px;
+	border:0.05vw solid #18171C;
+	background-color:#744b3a;
+	cursor:pointer;
+	text-decoration: none;
+	justify-content: center;
+	color:#E5E5E5;
+	margin-bottom:0px;	
+	margin-left:30px;
+	margin-top: 150px;
+
+</style>
+
+	<marquee direction="left" loop="-1" behavior="alternate" scrolldelay="60">
+	<h1>Museo Cantonale di storia naturale</h1></marquee>
+		<div class="flex griglia">
+			<p class="span_12 paragrafobase">L’intento di questa interfaccia è di catalogare tutti gli elementi presenti al Museo cantonale di storia naturale, tra cui le acque, la botanica, la mineralogia, la paleontologia, il territorio e la zoologia, in modo da permettere all’utente di visualizzare informazioni più esaustive nel ramo scientifico e di esplorare gli spazi espositivi da remoto.</p>
+		</div>
+
+			<div class="flex griglia">
+				<a class="bottonearchivio span_2 a2" href="index.html">archivio</a>
+				<div class="span_4"></div>
+				<a class="bottonediorami span_2 active" href="diorami.html">diorami</a>
+			</div>
+
+
+			<div class="grid-container-diorami">
+				<div style="margin:0px" class="container span_4">
+							<table class="table tablestile">
+							  <tr>
+							    <td style="width:25%">
+							    	<div  class="colorblue">
+							    		<img id="myImg" src="img_diorami/Diorama_Faggeta_1.jpg" width="100%" height="100%">
+							    	</div>
+							    	<div class="testoimmaginidiorami">
+							    	 Diorama Faggeta
+							    	</div>
+							    </td>
+							    <!-- The Modal -->
+								<div id="myModal" class="modal">
+								  <span class="close">⨂</span>
+								  <img class="modal-content" id="img01">
+								  <div id="caption"></div>
+								</div>
+							    <td style="width:25%">
+							    	<div class="colorblue">
+							    		<img src="img_diorami/Diorama_Castagneto_1.jpg" width="100%" height="100%">
+							    	</div>
+							    	<div class="testoimmaginidiorami">
+							    	 Diorama Castagneto
+							    	</div>
+							    </td>
+							    <td style="width:25%">
+							    	<div class="colorblue">
+							    		<img src="img_diorami/Diorama_incolto.jpg" width="100%" height="100%">
+							    	</div>
+							    	<div class="testoimmaginidiorami">
+							    	 Diorama Incolto
+							    	</div>
+							    </td>
+							    <td style="width:25%">
+							    	<div class="colorblue">
+							    		<img src="img_diorami/Diorama_siepe_1.jpg" width="100%" height="100%">
+							    	</div>
+							    	<div class="testoimmaginidiorami">
+							    	 Diorama Siepe
+							    	</div>
+							    </td>
+							</tr>
+							<tr>
+							    <td style="width:25%">
+							    	<div class="colorblue">
+							    		<img src="img_diorami/Diorama_zona_alpina_1.jpg" width="100%" height="100%">
+							    	</div>
+							    	<div class="testoimmaginidiorami">
+							    	 Diorama Zona alpina
+							    	</div>
+							    </td>
+							    <td style="width:25%">
+							    	<div class="colorblue">
+							    		<img src="img_diorami/Diorama_zona_notturna.jpg" width="100%" height="100%">
+							    	</div>
+							    	<div class="testoimmaginidiorami">
+							    	 Diorama Zona notturna
+							    	</div>
+							    </td>
+							    <td style="width:25%">
+							    	<div class="colorblue">
+							    		<img src="img_diorami/Diorama_zona_umida_2.jpg" width="100%" height="100%">
+							    	</div>
+							    	<div class="testoimmaginidiorami">
+							    	 Diorama Zona umida
+							    	</div>
+							    </td>
+							    <td style="width:25%">
+							    	<div class="colorblue">
+							    		<img src="img_diorami/Diorama_estinti_1.jpg" width="100%" height="100%">
+							    	</div>
+							    	<div class="testoimmaginidiorami">
+							    	 Diorama Estinti
+							    	</div>
+							    </td>
+							</tr>
+				</div>
+			</div>
+
+	
+
+
+<script type="text/javascript">
+	
+	/*Finestra-filtro*/
+    let acc = document.getElementsByClassName("filter");
+	let i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    
+    this.classList.toggle("active");
+
+    
+    let panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+
+// Get the modal
+let modal = document.getElementById("myModal");
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+let img = document.getElementById("myImg");
+let modalImg = document.getElementById("img01");
+let captionText = document.getElementById("caption");
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = this.alt;
+}
+
+// Get the <span> element that closes the modal
+let span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+  modal.style.display = "none";
+}
+
+
+
+ </script>
+
+
+</body>
+</html>

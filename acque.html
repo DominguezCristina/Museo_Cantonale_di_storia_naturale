@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Archivio+Diorami</title>
+
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  	<link rel="stylesheet" type="text/css" href="CSS/style.css">
+	
+</head>
+<body>
+<style>
+	.grid-container {
+	  display: grid;
+	  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+	  grid-gap: 15px;
+	  grid-row-gap:40px;
+	  background-color:#E5E5E5;
+	  padding: 0px 0px 0px 0px;
+	  margin-bottom:0px; 
+	}
+
+	.a:visited {
+  	color: #18171C;
+	}
+
+	.bottonediorami2:hover {
+	font-size:3vw;
+	font-family:Neue Haas Grotesk Text Pro;
+	font-weight:300;
+	text-align: center;
+	display: block;
+	width:14vw;
+	height:4vw;
+	border-radius:40px;
+	border:0.05vw solid #18171C;
+	background-color:#744b3a;
+	cursor:pointer;
+	text-decoration: none;
+	justify-content: center;
+	color:#E5E5E5;
+	margin-bottom:0px;
+	margin-top: 150px;
+
+	}
+
+	.bottonediorami2 {
+	font-size:3vw;
+	font-family:Neue Haas Grotesk Text Pro;
+	font-weight:300;
+	text-align: center;
+	display: block;
+	width:14vw;
+	height:4vw;
+	border-radius:40px;
+	border:0.05vw solid #18171C;
+	background-color:#E5E5E5;
+	cursor:pointer;
+	text-decoration: none;
+	justify-content: center;
+	color:#18171C;	
+	margin-bottom:0px;
+	margin-top: 150px;
+	}
+
+	.bottonearchivio2:hover, .bottonearchivio2.active {
+	font-size:3vw;
+	font-family:Neue Haas Grotesk Text Pro;
+	font-weight:300;
+	text-align: center;
+	display: block;
+	width:14vw;
+	height:4vw;
+	border-radius:40px;
+	border:0.05vw solid #18171C;
+	background-color:#744b3a;
+	cursor:pointer;
+	text-decoration: none;
+	justify-content: center;
+	color:#E5E5E5;	
+	margin-bottom:0px;
+	margin-left:30px;
+	margin-top: 150px;
+	}
+
+	.bottonearchivio2 {
+	font-size:3vw;
+	font-family:Neue Haas Grotesk Text Pro;
+	font-weight:300;
+	text-align: center;
+	display: block;
+	width:14vw;
+	height:4vw;
+	border-radius:40px;
+	border:0.05vw solid #18171C;
+	background-color:#E5E5E5;
+	cursor:pointer;
+	text-decoration: none;
+	justify-content: center;
+	color:#18171C;
+	margin-bottom:0px;
+	margin-left:30px;
+	margin-top: 150px;
+	}
+
+	.paragrafointro {
+	font-size:2vw;
+	font-family:Neue Haas Grotesk Text Pro;
+	font-weight:500;
+	display:block;
+	line-height:1.1;
+	text-align:justify;
+	text-justify:inter-word;
+	margin:15px 0px 15px 0px;
+	color:#18171c;
+	}
+
+	.paragrafotesto {
+	font-size:1.1vw;
+	font-family:Neue Haas Grotesk Text Pro;
+	font-weight:500;
+	display:block;
+	line-height:1.1;
+	text-align:justify;
+	text-justify:inter-word;
+	color:#18171c;
+	}
+
+	.colorblueL {
+	background-color:#1E1EF0;
+	margin-left: 30px;
+	margin-right: 7.5px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	overflow: hidden;
+	max-height: 100%;
+	max-width: 100%;
+	}
+
+	.colorblueR {
+	background-color:#1E1EF0;
+	margin-right:30px;
+	margin-left: 7.5px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	overflow: hidden;
+	max-height: 100%;
+	max-width: 100%;
+	}
+
+	.segnapostoL {
+	margin-left: 30px;
+	margin-right: 7.5px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	max-height: 100%;
+	max-width: 100%;
+	}
+
+	.segnapostoR {
+	margin-right:30px;
+	margin-left: 7.5px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	max-height: 100%;
+	max-width: 100%;
+	}
+	
+	 .more {  
+         display: none;    
+     }  
+
+     .bottonelettura {
+     	border:none;
+     	background: #E5E5E5;
+     	color:#1E1EF0;
+     	padding-left: 0px;
+     }
+
+     .bottonelettura:hover {
+     	border:none;
+     	background: #E5E5E5;
+     	color:#1E1EF0;
+     	padding-left: 0px;
+     	text-decoration: underline;
+     }
+
+</style>
+	<marquee direction="left" loop="-1" behavior="alternate" scrolldelay="60">
+	<h1>Museo Cantonale di storia naturale</h1></marquee>
+			<div style="color:#E5E5E5" class="span_12 paragrafobase">L’intento di questa interfaccia è di catalogare tutti gli elementi presenti al Museo cantonale di storia naturale, tra cui le acque, la botanica, la mineralogia, la paleontologia, il territorio e la zoologia, in modo da permettere all’utente di visualizzare informazioni più esaustive nel ramo scientifico e di esplorare gli spazi espositivi da remoto.</div>
+
+			<!-- Bottoni -->
+			<div class="flex griglia">
+				<a class="bottonearchivio2 span_2 active" href="index.html">archivio</a>
+				<div class="span_4"></div>
+				<a class="bottonediorami2 span_2 a" href="diorami.html">diorami</a>
+			</div>
+
+				<!-- Filtro -->
+				<div class="flex griglia">
+					<button class="span_12 filter"> Filtro </button>
+						<div class="span_12 panel">
+						<div class="container griglia">			
+							<table class="table span_12 tablestile">
+							<thead>
+							  <tr>
+							  	<th style="width:16.6%;" class="thstile2"></th>
+							    <th style="width:16.6%;" class="thstile2"></th>
+							    <th style="width:16.6%;" class="thstile2">Tipologia</th>
+							    <th style="width:16.6%;" class="thstile2">Nome</th>
+							    <th style="width:16.6%;" class="thstile2">Luogo</th>
+							    <th style="width:16.6%;" class="thstile2">Tipo di supporto</th>
+							  </tr>							   
+							</thead>
+							  <tr>
+							  	<td style="width:16.6%;" class="tdstile"></td>
+							    <td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Diga
+									</button>
+								</td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Progetto Diga del Ritom
+									</button>
+								</td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Bellinzona
+									</button>
+								</td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Audio
+									</button>
+								</td>
+							  </tr>
+							  <tr>
+							   	<td style="width:16.6%;" class="tdstile"></td>
+							    <td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Idroelettrico
+									</button>
+								</td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Alpe Ritom
+									</button>
+								</td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Blenio
+									</button>
+								</td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Immagini
+									</button>
+								</td>
+							  </tr>
+							  <tr>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							    <td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Laghi
+									</button>
+								</td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Condotte forzate
+									</button>
+								</td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Leventina
+									</button>
+								</td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Mappe
+									</button>
+								</td>
+							  </tr>
+							  <tr>
+							  	<td style="width:16.6%;" class="tdstile"></td>
+							    <td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Meromissi
+									</button>
+								</td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Diga del Ritom
+									</button>
+								</td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Locarno
+									</button>
+								</td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Testi
+									</button>
+								</td>
+							  </tr>
+							  <tr>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							    <td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Val Cadlimo
+									</button>
+								</td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Lugano
+									</button>
+								</td>
+								<td style="width:16.6%;" class="tdstile"></td>
+							  </tr>
+							    <tr>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							    <td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Val Canaria
+									</button>
+								</td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Maggia
+									</button>
+								</td>
+								<td style="width:16.6%;" class="tdstile"></td>
+							  </tr>
+							   <tr>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							   	<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Unteralp
+									</button>
+								</td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Mendrisio
+									</button>
+								</td>
+								<td style="width:16.6%;" class="tdstile"></td>
+							  </tr>
+							  <tr>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							   	<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Lago Cadagno
+									</button>
+								</td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Riviera
+									</button>
+								</td>
+								<td style="width:16.6%;" class="tdstile"></td>
+							  </tr>
+														 
+							  <tr>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							   	<td style="width:16.6%;" class="tdstile"></td> 
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+									〇 Lago dei Campanitt
+									</button>
+								</td>
+								<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile"></td>
+							  </tr>
+							  <tr>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							   	<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Lago di Dentro
+									</button>
+								</td>
+								<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile"></td>
+							  </tr>
+							  <tr>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							   	<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Laghetto di Giübin
+									</button>
+								</td>
+								<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile"></td>
+							  </tr>
+							  <tr>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							   	<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Lago dell'Isra
+									</button>
+								</td>
+								<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile"></td>
+							  </tr>
+							  <tr>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							   	<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Laghetto in zona
+									</button>
+								</td>
+								<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile"></td>
+							  </tr>
+							  <tr>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							   	<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Lago Pecian
+									</button>
+								</td>
+								<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile"></td>
+							  </tr>
+							  <tr>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							   	<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Lago Ritom
+									</button>
+								</td>
+								<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile"></td>
+							  </tr>
+							  <tr>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							   	<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Lago Scuro
+									</button>
+								</td>
+								<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile"></td>
+							  </tr>
+							  <tr>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							   	<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Lago della Segna
+									</button>
+								</td>
+								<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile"></td>
+							  </tr>
+							   <tr>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							   	<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Lago dello Stabbio
+									</button>
+								</td>
+								<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile"></td>
+							  </tr>
+							  <tr>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							   	<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Laghetto di Taneda
+									</button>
+								</td>
+								<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile"></td>
+							  </tr>
+							  <tr>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							   	<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Lago di Tom
+									</button>
+								</td>
+								<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile"></td>
+							  </tr>
+							  <tr>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							   	<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Mottone
+									</button>
+								</td>
+								<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile"></td>
+							  </tr>
+							  <tr>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							   	<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Murinascia
+									</button>
+									<br>
+								</td>
+								<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile"></td>
+							  </tr>
+							</table>
+						</div>
+					</div>
+				</div>
+				
+						
+			<!-- Tabella -->	
+			<div class="grid-container">
+				<div style="margin:0px" class="container span_12">
+							<table class="table tablestile">
+							<tbody id="myTable">
+								<!-- Sezione -->
+							  	<tr style="border-top: 0.05vw solid #18171C; margin-top:30px; width:100%" class="tr"> 
+							    	<td style="width:50%; background: #744b3a;">
+							    		<div style="margin-left: 30px; margin-right: 7.5px; color:#E5E5E5" class="paragrafointro">
+											 Acque
+											 <br>
+											 <br>
+											 <br>											
+										</div>
+										<div class="colorblue colorblueL">
+							    			<img src="img_archivio/Unteralp.jpg" width="100%" height="100%">
+							    		</div>
+							    	</td>
+							    	<td style="width:50%; background: #744b3a;">
+							    		<div style="margin-right: 30px; margin-left: 7.5px; color: #E5E5E5" class="paragrafointro">
+											 Il settore Acque si occupa degli aspetti inerenti la distribuzione delle acque sulla superficie del Cantone Ticino.
+										</div> 
+										<div class="colorblue colorblueR">
+							    			<img src="img_archivio/lago tom.png" width="100%" height="100%">
+							    		</div>
+							    		<div style="margin-right: 30px; margin-left: 7.5px; margin-bottom: 30px; color: #E5E5E5" class="paragrafotesto">	
+											 I corsi d’acqua e i laghi, oltre a essere importanti per la vita dell’uomo (approvvigionamento idrico e energetico, svago, pesca, ...) e degli altri organismi viventi, sono elementi caratteristici del nostro paesaggio: essi meritano la nostra attenzione e protezione.
+											 Attraverso le attività di monitoraggio l’UPAAI, oltre a verificare la qualità delle acque, contribuisce alla conoscenza dello stato dell’ambiente acquatico ticinese e offre un supporto pianificatorio, scientifico e di verifica per i progetti di risanamento e di rivitalizzazione dei corsi d’acqua e delle rive lacustri.
+										</div>	
+							    	</td>							    	 
+							  	</tr>
+							  	<!-- Sezione -->
+							  	<tr style="border-top: 0.05vw solid #18171C; margin-top:30px; width:100%" class="tr"> 
+							    	<td style="width:50%; background: #E5E5E5">
+							    		<div style="margin-left: 30px; margin-right: 7.5px" class="paragrafointro">
+											 Diga
+											 <br>
+											 <br>
+											 <br>
+											 <br>
+										</div>
+										<div class="segnapostoL">
+							    			<img src="img_archivio/segnaposto.jpg" width="100%" height="100%">	
+							    		</div> 		
+										<div style="margin-left: 30px; margin-right: 7.5px; margin-bottom: 30px" class="paragrafotesto">
+											 Quando una diga produce un invaso superiore al milione di metri cubi o è alta più di 15 m, prende il nome di ‟grande diga” e il suo controllo spetta direttamente allo stato. Quando supera i 10 m di altezza o i centomila metri cubi risulta essere sotto il controllo delle regioni. Per dimensioni inferiori, il suo controllo spetta al gestore che può essere anche privato. Di solito l’ultimo tipo di diga prende il nome di ‟traversa”.	
+											 A seconda dei materiali impiegati per la costruzione la diga fissa può essere di calcestruzzo (o muratura), in terra, di pietrame, di materiale misto.
+										</div>						
+							    	</td>
+							    	<td style="width:50%; background: #E5E5E5">
+							    		<div style="margin-right: 30px; margin-left: 7.5px;" class="paragrafointro">
+											 Una diga è uno sbarramento artificiale permanente, fisso o mobile, atto a regolare il deflusso di un corso d’acqua naturale, a creare un lago artificiale, oppure a proteggere un tratto di costa o un porto. 
+										</div> 
+										<div class="colorblue colorblueR">
+							    			<img src="img_archivio/Diga_intro.jpg" width="100%" height="100%">
+							    		</div>	
+										<div style="margin-right: 30px; margin-left: 7.5px; margin-bottom: 30px" class="paragrafotesto">
+											 Gli sbarramenti in calcestruzzo possono essere del tipo a gravità (anche alleggerita), ad arco o di tipi misti (arco-gravità, volte multiple, ecc.). Si tratta di un’opera importante in fase di progettazione e realizzazione nell’ambito dell’ingegneria civile. Le dighe mobili e le traverse in genere sono realizzate solitamente in carpenteria metallica con movimentazione idraulica ad olio, ma ne esistono anche in legno (porte vinciane), in gomma con movimentazione pneumatica o idraulica ad acqua (rubberdam), ibride in gomma e metallo con lo stesso tipo di movimentazione delle traverse in gomma (hard top rubber dam).
+										</div> 
+							    	</td>							    	 
+							  	</tr>
+							  	<!-- Sezione -->
+							  	<tr style="border-top: 0.05vw solid #18171C; margin-top:30px; width:100%" class="tr"> 
+							    	<td style="width:50%; background: #E5E5E5">
+							    		<div style="margin-left: 30px; margin-right: 7.5px;" class="paragrafointro">
+											 Diga / <br>
+											 Progetto Diga del Ritom
+											 <br>
+											 <br>
+											 <br>
+											 <br>
+											 <br>
+											 <br>
+											 <br>
+											 <br>
+											 <br>
+											 <br>
+											 <br>
+											 <br>
+											 <br>
+											 <br>
+										</div>
+							    		<div style="margin-left: 30px; margin-right: 7.5px;" class="paragrafointro">
+											 Costruita nel 1920, la centrale Ritom del canton Ticino sfrutta l’acqua che arriva dal bacino di raccolta che la sovrasta. Entrò in funzione quando nella linea ferroviaria del Gottardo fu introdotta la trazione elettrica.
+										</div> 					
+							    	</td>
+							    	<td style="width:50%; background: #E5E5E5">
+										<div class="colorblue colorblueR">
+							    			<img src="img_archivio/Costruzione_diga_ritom.jpg" width="100%" height="100%">
+							    		</div>	
+										<div style="margin-right: 30px; margin-left: 7.5px; margin-bottom: 30px;" class="paragrafotesto">
+											 Nel 1920 non c’era grande disponibilità di ferro e per questo alcune delle mura dell’edificio che ospita la centrale sono davvero poderose: sono di calcestruzzo rinforzato.‟Sono molto spesse le pareti della stanza che ospita la turbina a causa della gru e dei binari usati. Si tratta di una caratteristica peculiare della costruzione”, spiega Holenstein. I libri di storia raccontano che si tratta, insieme ad Amsteg, della prima centrale elettrica costruita per generare direttamente corrente a fase singola con 16 e 2/3 cicli al secondo. Se non siete delle aquile sull’argomento, come d’altronde chi scrive, una visita al Ritom non potrà che giovarvi. In parole povere, l’acqua del bacino di raccolta che sovrasta la centrale scende a valle canalizzata in due condotti, che diventano quattro per raggiungere ognuno una turbina ed un generatore.‟Quattro turbine e quattro generatori che normalmente sono in funzione 24 ore al giorno e 365 giorni all’anno”, racconta a swissinfo Alfiero Martinoli, che è a capo dello staff di 13 persone che lavora nella centrale.
+										</div>			
+							    	</td>							    	 
+							  	</tr>
+							  	<!-- Sezione -->
+							  	<tr style="border-top: 0.05vw solid #18171C; margin-top:30px; width:100%" class="tr"> 
+							    	<td style="width:50%; background: #E5E5E5">
+							    		<div style="margin-left: 30px; margin-right: 7.5px" class="paragrafointro">
+											 Idroelettrico
+											 <br>
+											 <br>
+											 <br>
+										</div>
+										<div class="segnapostoL">
+							    			<img src="img_archivio/segnaposto.jpg" width="100%" height="100%">	
+							    		</div> 		
+										<div style="margin-left: 30px; margin-right: 7.5px; margin-bottom: 30px" class="paragrafotesto">
+											 L’energia idroelettrica è considerata una fonte di energia alternativa e rinnovabile, che sfrutta la trasformazione in energia elettrica, tramite un alternatore accoppiato ad una turbina in una centrale idroelettrica, dell’energia potenziale gravitazionale posseduta da una certa massa dacqua contenuta in un lago ad una certa quota altimetrica, sfruttando un determinato dislivello, o direttamente dell’energia cinetica posseduta da una corso d’acqua.
+											 I greci e i romani furono le prime civiltà nel Mondo, ad utilizzare la potenza dell’acqua, o più precisamente dell’energia cinetica prodotta da essa; si deve però specificare che queste due antiche civiltà sfruttarono questo tipo di energia rinnovabile solo per azionare semplici mulini ad acqua per macinare il grano. 
+										</div>						
+							    	</td>
+							    	<td style="width:50%; background: #E5E5E5">
+							    		<div style="margin-right: 30px; margin-left: 7.5px;" class="paragrafointro">
+											 L’energia idroelettrica è considerata una fonte di energia alternativa e rinnovabile, che sfrutta la trasformazione in energia elettrica.
+										</div> 
+										<div class="colorblue colorblueR">
+							    			<img src="img_archivio/idroelettrico_intro.jpg" width="100%" height="100%">
+							    		</div>	
+										<div style="margin-right: 30px; margin-left: 7.5px; margin-bottom: 30px" class="paragrafotesto">
+											 Si deve aspettare il Basso Medioevo e le scoperte portate dal popolo degli Arabi del Nord Africa, per avere altri metodi di sfruttamento dell’energia contenuta in un flusso d’acqua: furono sempre più utilizzate, sia per l’irrigazione dei campi sia per la bonifica di vaste zone paludose, la ruota idraulica, schematizzabile come un mulino senza pale che ruotava su un punto fisso per azione della forza esercitata dall’acqua stessa.
+											 Un progresso tecnico di enormi proporzioni si è avuto alla fine dell’Ottocento, circa all’inizio della Seconda Rivoluzione Industriale avvenuta in Europa e non solo, in seguito all’evoluzione della ruota idraulica in turbina, macchina motrice costruita da una ruota a pale imperniata su un asse, che all’inizio erano grossolane e schematizzate, ma con le innovazioni tecnologiche, soprattutto della prima metà del Novecento, divenne sempre più perfezionata e funzionale.
+										</div> 
+							    	</td>							    	 
+							  	</tr>
+
+							  	<!-- Sezione -->
+							  	<tr style="border-top: 0.05vw solid #18171C; margin-top:30px; width:100%" class="tr"> 
+							    	<td style="width:50%; background: #E5E5E5">
+							    		<div style="margin-left: 30px; margin-right: 7.5px" class="paragrafointro">
+											 Idroelettrico / <br>
+											 Alpe Ritom
+											 <br>
+											 <br>
+										</div>
+										<div class="segnapostoL">
+							    			<img src="img_archivio/segnaposto.jpg" width="100%" height="100%">	
+							    		</div> 		
+										<div style="margin-left: 30px; margin-right: 7.5px" class="paragrafotesto">
+											 Il progetto della nuova centrale idroelettrica del Ritom si inserisce nell’ambito della Strategia Energetica 2050 della Confederazione, rivestendo un ruolo cardine a sud delle Alpi. Il progetto, che prevede di potenziare e ampliare l’impianto esistente costruito nel 1917 dalle FFS, contempla interventi su diversi livelli. A fianco alla monumentale centrale di Piotta è prevista la costruzione di una nuova sala macchine dove saranno alloggiati due nuovi gruppi produttivi (turbine Pelton e generatore) da 16.7 e 50 Hz e una pompa. Questo nuovo edificio integrerà la centrale esistente AET di Stalvedro, alimentata dalle acque raccolte nel bacino di compenso di Airolo. Davanti alla nuova costruzione verrà realizzato un grosso bacino di demodulazione. Esso avrà la funzione di controllare e regolare il deflusso nel fiume Ticino delle acque provenienti dalle centrali Ritom e Stalvedro.
+
+
+										</div>						
+							    	</td>
+							    	<td style="width:50%; background: #E5E5E5">
+							    		<div style="margin-right: 30px; margin-left: 7.5px;" class="paragrafointro">
+											 Il progetto si inserisce nell’ambito della Strategia Energetica 2050 della Confederazione, rivestendo un ruolo cardine a sud delle Alpi. 
+										</div> 
+										<div class="colorblue colorblueR">
+							    			<img src="img_archivio/idroelettrico_alpe_ritom.jpg" width="100%" height="100%">
+							    		</div>	
+										<div style="margin-right: 30px; margin-left: 7.5px;" class="paragrafotesto">
+											 Una pompa permetterà inoltre di collegare il bacino di Airolo con il lago Ritom con conseguente aumento della flessibilità produttiva dell’intera catena della Leventina. È inoltre in fase di realizzazione un convertitore di frequenza che permetterà la trasformazione della corrente da 16.7 a 50 Hz e viceversa con ovvi vantaggi sulla flessibilità dell’impianto.
+											 Le attuali condotte forzate, che dalla diga di Piora portano l’acqua in pressione alla centrale esistente, saranno sostituite da un nuovo sistema di adduzione in sotterraneo. Il tunnel o meglio «pozzo forzato» partirà da una nuova camera valvole con pozzo di accesso realizzata in quota, in adiacenza alla nuova presa sotto carico della diga.
+											 <span class = "dots"></span> 
+											 <span class = "more">  
+											 Si tratta dunque di un grosso intervento che, seppure contraddistinto da un innegabile carattere funzionale e tecnico, ha richiesto un attento studio di inserimento paesaggistico volto al dialogo con il contesto. Il coinvolgimento degli architetti fin dalle prime fasi di progetto ha portato a un risultato che evidenzia l’attenzione e la sensibilità nei confronti della tematica della compensazione e della valorizzazione ambientale e paesaggistica estesa a tutto il comparto.
+											 Ripercorrendo la strada che dalla base arriva in quota, a livello della diga, l’obiettivo è stato quello di ottenere un tema architettonico univoco che legasse i nuovi interventi con gli edifici esistenti e gli elementi naturali – quali il versante, che passa da zone più rocciose a zone più verdi, il fiume Ticino, il riale Foss e la diga – rispettando, al contempo, i forti condizionamenti tecnici e ingegneristici legati alla funzionalità del sistema. In tale senso sono stati realizzati due piani di quartiere: uno alla base, in località Piotta, e uno in testa, a Piora.
+											 </span>  
+											 <button class= "read bottonelettura">+ Contenuto</button> 
+										</div> 
+							    	</td>							    	 
+							  	</tr>
+							  	
+							</tbody>
+							</table>
+				</div>
+			</div>
+				
+				
+				
+
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$(".table_filter").each(function() {
+		     $(this).click(function(){
+			     $(this).toggleClass("active"); 
+
+
+			     	if ($(this).hasClass("active")){
+						var toRemove = '〇';
+						var toReplace = '◉';
+
+				   	 
+					}
+					else{
+						var toRemove = '◉';
+						var toReplace = '〇';
+
+					}
+
+					$(this).html( $(this).text().replace(toRemove,toReplace));
+					$.fn.tableFilter();
+					
+
+
+
+			  }); 
+		});
+
+		$.fn.tableFilter = function(){ 
+			var value =''
+
+		    $(".table_filter").each(function() {
+		    	if ($(this).hasClass("active")){
+		    		if(value != ''){
+		    			var toRemove = '◉';
+		    			value = value +","+ $(this).text().replace(toRemove,'').toLowerCase();
+					}
+					else
+					{
+						var toRemove = '◉';
+						value = $(this).text().replace(toRemove,'').toLowerCase();
+					}
+				}
+			});
+
+
+			var split = value.split(",");
+
+
+
+		   	$("#myTable td").filter(function() {
+		   		var flag = true;
+		   		for (i = 0; i < split.length; i++) {
+			 		if ($(this).text().toLowerCase().indexOf(split[i] ) == -1){
+		   				flag = false
+		   				break;
+		   			}
+			 	}
+
+			 	$(this).toggle(flag)
+			});
+		}
+
+
+
+		$(".table_filter").on("keyup", function() {
+			var value = $(this).val().toLowerCase();
+			$("#myTable tr").filter(function() {
+			 	$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+			});
+		});
+	});
+
+	/*Finestra-filtro*/
+    let acc = document.getElementsByClassName("filter");
+	let i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    
+    this.classList.toggle("active");
+
+    
+    let panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+
+/*Read more*/
+$(document).ready(function(){  
+    $(".read").click(function(){  
+        $(this).prev().toggle();  
+        $(this).siblings('.dots').toggle();  
+        if($(this).text()=='+ Contenuto'){  
+            $(this).text('– Contenuto');  
+        }  
+        else{  
+            $(this).text('+ Contenuto');  
+        }  
+  
+    });  
+});  
+
+
+
+ </script>
+
+
+</body>
+</html>

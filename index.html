@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Archivio+Diorami</title>
+
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  	<link rel="stylesheet" type="text/css" href="CSS/style.css">
+	
+</head>
+<body>
+<style>
+	.grid-container {
+	  display: grid;
+	  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+	  grid-gap: 15px;
+	  grid-row-gap:40px;
+	  background-color:#744b3a;
+	  padding:15px 30px 30px 25px;
+	  margin-bottom:0px; 
+	}
+
+	.a:visited {
+  	color: #E5E5E5;
+	}
+
+	.a:hover {
+  	color: #1E1EF0;
+	}
+
+	.bottonegalleria:hover , .bottonegalleria.active {
+	color:#1E1EF0;
+	font-size:1.4vw;
+	text-decoration: none;
+	}
+
+	.bottonelista:hover , .bottonelista.active {
+	color:#1E1EF0;
+	font-size:1.4vw;
+	text-decoration: none;
+	}
+
+	a:visited {
+  	color: #18171C;
+	}
+
+	.tr:hover {
+	color:#1E1EF0;
+	}
+	
+</style>
+
+	<marquee direction="left" loop="-1" behavior="alternate" scrolldelay="60">
+	<h1>Museo Cantonale di storia naturale</h1></marquee>
+		<div class="flex griglia">
+			<p class="span_12 paragrafobase">L’intento di questa interfaccia è di catalogare tutti gli elementi presenti al Museo cantonale di storia naturale, tra cui le acque, la botanica, la mineralogia, la paleontologia, il territorio e la zoologia, in modo da permettere all’utente di visualizzare informazioni più esaustive nel ramo scientifico e di esplorare gli spazi espositivi da remoto.</p>
+		</div>
+
+			<!-- Bottoni -->
+			<div class="flex griglia">
+				<a class="bottonearchivio span_2 active" href="index.html">archivio</a>
+				<div class="span_4"></div>
+				<a class="bottonediorami span_2 " href="diorami.html">diorami</a>
+			</div>
+
+				<!-- Filtro -->
+				<div class="flex griglia">
+					<button class="span_12 filter"> Filtro </button>
+						<div class="span_12 panel">
+						<div class="container griglia">			
+							<table class="table span_12 tablestile">
+							<thead>
+							  <tr>
+							  	<th style="width:16.6%;" class="thstile2"></th>
+							    <th style="width:16.6%;" class="thstile2">Sezione</th>
+							    <th style="width:16.6%;" class="thstile2">Tipologia</th>
+							    <th style="width:16.6%;" class="thstile2">Luogo</th>
+							    <th style="width:16.6%;" class="thstile2">Diorama</th>
+							    <th style="width:16.6%;" class="thstile2">Tipo di supporto</th>
+							  </tr>							   
+							</thead>
+							  <tr>
+							  	<td style="width:16.6%;" class="tdstile"></td>
+							    <td style="width:16.6%;" class="tdstile"><button class="table_filter">〇 Acque</button></td>
+								<td style="width:16.6%;" class="tdstile"><button class="table_filter">〇 Diga</button></td>
+								<td style="width:16.6%;" class="tdstile"><button class="table_filter">〇 Bellinzona</button></td>
+								<td style="width:16.6%;" class="tdstile"><button class="table_filter">〇 Castagneto</button></td>
+								<td style="width:16.6%;" class="tdstile"><button class="table_filter">〇 Audio</button></td>
+							  </tr>
+							  <tr>
+							   	<td style="width:16.6%;" class="tdstile"></td>
+							    <td style="width:16.6%;" class="tdstile"><button class="table_filter">〇 Botanica</button></td>
+								<td style="width:16.6%;" class="tdstile"><button class="table_filter">〇 Idroelettrico</button></td>
+								<td style="width:16.6%;" class="tdstile"><button class="table_filter">〇 Blenio</button></td>
+								<td style="width:16.6%;" class="tdstile"><button class="table_filter">〇 Estinti</button></td>
+								<td style="width:16.6%;" class="tdstile"><button class="table_filter">〇 Immagini</button></td>
+							  </tr>
+							  <tr>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							    <td style="width:16.6%;" class="tdstile"><button class="table_filter">〇 Mineralogia</button></td>
+								<td style="width:16.6%;" class="tdstile"><button class="table_filter">〇 Laghi</button></td>
+								<td style="width:16.6%;" class="tdstile"><button class="table_filter">〇 Leventina</button></td>
+								<td style="width:16.6%;" class="tdstile"><button class="table_filter">〇 Faggeta</button></td>
+								<td style="width:16.6%;" class="tdstile"><button class="table_filter">〇 Mappe</button></td>
+							  </tr>
+							  <tr>
+							  	<td style="width:16.6%;" class="tdstile"></td>
+							    <td style="width:16.6%;" class="tdstile"><button class="table_filter">〇 Paleontologia</button></td>
+								<td style="width:16.6%;" class="tdstile"><button class="table_filter">〇 Meromissi</button></td>
+								<td style="width:16.6%;" class="tdstile"><button class="table_filter">〇 Locarno</button></td>
+								<td style="width:16.6%;" class="tdstile"><button class="table_filter">〇 Incolto</button></td>
+								<td style="width:16.6%;" class="tdstile"><button class="table_filter">〇 Testi</button></td>
+
+							  </tr>
+							  <tr>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							    <td style="width:16.6%;" class="tdstile"><button class="table_filter">〇 Territorio</button></td>
+								<td style="width:16.6%;" class="tdstile"><button class="table_filter">〇 Funghi</button></td>
+								<td style="width:16.6%;" class="tdstile"><button class="table_filter">〇 Lugano</button></td>
+								<td style="width:16.6%;" class="tdstile"><button class="table_filter">〇 Siepe</button></td>
+								<td style="width:16.6%;" class="tdstile"></td>
+							  </tr>
+							    <tr>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							    <td style="width:16.6%;" class="tdstile"><button class="table_filter">〇 Zoologia</button></td>
+								<td style="width:16.6%;" class="tdstile"><button class="table_filter">〇 Lariceto</button></td>
+								<td style="width:16.6%;" class="tdstile"><button class="table_filter">〇 Maggia</button></td>
+								<td style="width:16.6%;" class="tdstile"><button class="table_filter">〇 Zona alpina</button></td>
+								<td style="width:16.6%;" class="tdstile"></td>
+							  </tr>
+							   <tr>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							   	<td style="width:16.6%;" class="tdstile"><button class="table_filter">〇 Ontaneto</button></td>
+								<td style="width:16.6%;" class="tdstile"><button class="table_filter">〇 Mendrisio</button></td>
+								<td style="width:16.6%;" class="tdstile"><button class="table_filter">〇 Zona notturna</button></td>
+								<td style="width:16.6%;" class="tdstile"></td>
+							  </tr>
+							  <tr>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							   	<td style="width:16.6%;" class="tdstile"><button class="table_filter">〇 Praterie</button></td>
+								<td style="width:16.6%;" class="tdstile"><button class="table_filter">〇 Riviera</button></td>
+								<td style="width:16.6%;" class="tdstile"><button class="table_filter">〇 Zona umida</button></td>
+								<td style="width:16.6%;" class="tdstile"></td>
+							  </tr>
+							  <tr>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							   	<td style="width:16.6%;" class="tdstile"><button class="table_filter">〇 Pietraie</button></td>
+								<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile"></td>
+							  </tr>
+							  <tr>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							   	<td style="width:16.6%;" class="tdstile"><button class="table_filter">〇 Brughiera</button></td>
+								<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile"></td>
+							  </tr>
+							  <tr>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							   	<td style="width:16.6%;" class="tdstile"><button class="table_filter">〇 Paludi</button></td>
+								<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile"></td>
+							  </tr>
+							  <tr>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							   	<td style="width:16.6%;" class="tdstile"><button class="table_filter">〇 Rocce calcescisti</button></td>
+								<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile"></td>
+							  </tr>
+							  <tr>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							   	<td style="width:16.6%;" class="tdstile"><button class="table_filter">〇 Rocce carbonatiche</button></td>
+								<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile"></td>
+							  </tr>
+							  <tr>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							   	<td style="width:16.6%;" class="tdstile"><button class="table_filter">〇 Rocce cristalline</button></td>
+								<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile"></td>
+							  </tr>
+							  <tr>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							   	<td style="width:16.6%;" class="tdstile"><button class="table_filter">〇 Rocce minerali</button></td>
+								<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile"></td>
+							  </tr>
+							  <tr>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							   	<td style="width:16.6%;" class="tdstile"><button class="table_filter">〇 Rocce quatemario</button></td>
+								<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile"></td>
+							  </tr>
+							  <tr>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							   	<td style="width:16.6%;" class="tdstile"><button class="table_filter">〇 Fossili</button></td>
+								<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile"></td>
+							  </tr>
+							   <tr>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							   	<td style="width:16.6%;" class="tdstile"><button class="table_filter">〇 Alpeggio</button></td>
+								<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile"></td>
+							  </tr>
+							  <tr>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							   	<td style="width:16.6%;" class="tdstile"><button class="table_filter">〇 Vedute</button></td>
+								<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile"></td>
+							  </tr>
+							  <tr>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							   	<td style="width:16.6%;" class="tdstile"><button class="table_filter">〇 Zone protette</button></td>
+								<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile"></td>
+							  </tr>
+							  <tr>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							   	<td style="width:16.6%;" class="tdstile"><button class="table_filter">〇 Anfibi e rettili</button></td>
+								<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile"></td>
+							  </tr>
+							  <tr>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							   	<td style="width:16.6%;" class="tdstile"><button class="table_filter">〇 Mammiferi</button></td>
+								<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile"></td>
+							  </tr>
+							  <tr>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							   	<td style="width:16.6%;" class="tdstile"><button class="table_filter">〇 Uccelli</button></td>
+								<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile"></td>
+							  </tr>
+							</table>
+						</div>
+					</div>
+				</div>
+						
+				<!-- Bottoni -->	
+				<div style="background: #744b3a; border-bottom: 0.05vw solid #E5E5E5; padding-left: 2.2%;">
+					<a class="bottonegalleria a" href="index.html"> ⊞ </a>
+					<a class="bottonelista a" href="archivio_lista.html"> ☰ </a>	
+				</div>
+
+			<!-- Tabella -->
+			<div class="grid-container">
+				<div style="margin:0px" class="container span_12">
+							<table class="table span_12 tablestile">
+							<tbody id="myTable">
+							  <tr> <!-- Riga da 4 -->
+							    <td style="width:16.6%;">
+							    	<div  class="colorblue">
+							    		<img src="img_archivio/Costruzione_diga_ritom.jpg" width="100%" height="100%">
+							    	</div>
+							    	<div class="testogalleriaarchivio">
+							    		<a  class="a" href="acque.html">Acque / Diga / <br>Progetto Diga del Ritom</a>
+							    	</div>
+							    </td>
+							    <td style="width:16.6%;">
+							    	<div class="colorblue">
+							    		<img src="img_archivio/idroelettrico_alpe_ritom.jpg" width="100%" height="100%">
+							    	</div>
+							    	<div class="testogalleriaarchivio">
+							    	 <a  class="a" href="acque.html">Acque / Idroelettrico / <br>Alpe Ritom</a>
+							    	</div>
+							    </td>
+							    <td style="width:16.6%;">
+							    	<div class="colorblue">
+							    		<img src="img_archivio/Condotte_forzate.jpeg" width="100%" height="100%">
+							    	</div>
+							    	<div class="testogalleriaarchivio">
+							    	 <a  class="a" href="acque.html">Acque / Idroelettrico / <br>Condotta forzata</a>
+							    	</div>
+							    </td>
+							    <td style="width:16.6%;">
+							    	<div class="colorblue">
+							    		<img src="img_archivio/Diga_ritom.jpg" width="100%" height="100%">
+							    	</div>
+							    	<div class="testogalleriaarchivio">
+							    	 <a  class="a" href="acque.html">Acque / Idroelettrico / <br>Diga del Ritom</a>
+							    	</div>
+							    </td>
+							    <td style="width:16.6%;">
+							    	<div class="colorblue">
+							    		<img src="img_archivio/Val_Cadlimo.jpg" width="100%" height="100%">
+							    	</div>
+							    	<div class="testogalleriaarchivio">
+							    	 <a  class="a" href="acque.html">Acque / Idroelettrico / <br>Val Cadlimo</a>
+							    	</div>
+							    </td>
+							    <td style="width:16.6%;">
+							    	<div class="colorblue">
+							    		<img src="img_archivio/Val_Canaria.jpg" width="100%" height="100%">
+							    	</div>
+							    	<div class="testogalleriaarchivio">
+							    	 <a  class="a" href="acque.html">Acque / Idroelettrico / <br>Val Canaria</a>
+							    	</div>
+							    </td>
+							  </tr>
+
+							  <tr> <!-- Riga da 4 -->
+							    <td style="width:16.6%;">
+							    	<div  class="colorblue">
+							    		<img src="img_archivio/Unteralp.jpg" width="100%" height="100%">
+							    	</div>
+							    	<div class="testogalleriaarchivio">
+							    	 <a  class="a" href="acque.html">Acque / Idroelettrico / <br>Unteralp</a>
+							    	</div>
+							    </td>
+							    <td style="width:16.6%;">
+							    	<div class="colorblue">
+							    		<img src="img_archivio/Lago_cadagno.jpg" width="100%" height="100%">
+							    	</div>
+							    	<div class="testogalleriaarchivio">
+							    	 <a  class="a" href="acque.html">Acque / Laghi / <br>Lago Cadagno</a>
+							    	</div>
+							    </td>
+							    <td style="width:16.6%;">
+							    	<div class="colorblue">
+							    		<img src="img_archivio/Lago dei Campanitt.jpg" width="100%" height="100%">
+							    	</div>
+							    	<div class="testogalleriaarchivio">
+							    	 <a  class="a" href="acque.html">Acque / Laghi / <br>Lago dei Campanitt</a>
+							    	</div>
+							    </td>
+							    <td style="width:16.6%;">
+							    	<div class="colorblue">
+							    		<img src="img_archivio/Lago_di_dentro.jpg" width="100%" height="100%">
+							    	</div>
+							    	<div class="testogalleriaarchivio">
+							    	 <a  class="a" href="acque.html">Acque / Laghi / <br>Lago di Dentro</a>
+							    	</div>
+							    </td>
+							    <td style="width:16.6%;">
+							    	<div class="colorblue">
+							    		<img src="img_archivio/Lago_giubin.jpg" width="100%" height="100%">
+							    	</div>
+							    	<div class="testogalleriaarchivio">
+							    	 <a  class="a" href="acque.html">Acque / Laghi / <br>Laghetto di Giübin</a>
+							    	</div>
+							    </td>
+							    <td style="width:16.6%;">
+							    	<div class="colorblue">
+							    		<img src="img_archivio/Lago dell’Isra.jpg" width="100%" height="100%">
+							    	</div>
+							    	<div class="testogalleriaarchivio">
+							    	 <a  class="a" href="acque.html">Acque / Laghi / <br>Lago dell'Isra</a>
+							    	</div>
+							    </td>
+							  </tr>
+
+							  <tr> <!-- Riga da 4 -->
+							    <td style="width:16.6%;">
+							    	<div  class="colorblue">
+							    		<img src="img_archivio/Laghetto in zona.jpg" width="100%" height="100%">
+							    	</div>
+							    	<div class="testogalleriaarchivio">
+							    	 <a  class="a" href="acque.html">Acque / Laghi / <br>Laghetto in zona</a>
+							    	</div>
+							    </td>
+							    <td style="width:16.6%;">
+							    	<div class="colorblue">
+							    		<img src="img_archivio/Lago Pecian.jpg" width="100%" height="100%">
+							    	</div>
+							    	<div class="testogalleriaarchivio">
+							    	 <a  class="a" href="acque.html">Acque / Laghi / <br>Lago Pecian</a>
+							    	</div>
+							    </td>
+							    <td style="width:16.6%;">
+							    	<div class="colorblue">
+							    		<img src="img_archivio/Lago_Ritom.jpg" width="100%" height="100%">
+							    	</div>
+							    	<div class="testogalleriaarchivio">
+							    	 <a  class="a" href="acque.html">Acque / Laghi / <br>Lago Ritom</a>
+							    	</div>
+							    </td>
+							    <td style="width:16.6%;">
+							    	<div class="colorblue">
+							    		<img src="img_archivio/Lago_scuro.jpg" width="100%" height="100%">
+							    	</div>
+							    	<div class="testogalleriaarchivio">
+							    	 <a  class="a" href="acque.html">Acque / Laghi / <br>Lago Scuro</a>
+							    	</div>
+							    </td>
+							    <td style="width:16.6%;">
+							    	<div class="colorblue">
+							    		<img src="img_archivio/Lago della segna.png" width="100%" height="100%">
+							    	</div>
+							    	<div class="testogalleriaarchivio">
+							    	 <a  class="a" href="acque.html">Acque / Laghi / <br>Laghetto della Segna</a>
+							    	</div>
+							    </td>
+							    <td style="width:16.6%;">
+							    	<div class="colorblue">
+							    		<img src="img_archivio/Lago dello Stabbio.jpg" width="100%" height="100%">
+							    	</div>
+							    	<div class="testogalleriaarchivio">
+							    	 <a  class="a" href="acque.html">Acque / Laghi / <br>Lago dello Stabbio</a>
+							    	</div>
+							    </td>
+							  </tr>
+
+							  <tr> <!-- Riga da 4 -->
+							    <td style="width:16.6%;">
+							    	<div  class="colorblue">
+							    		<img src="img_archivio/Laghetto di Taneda.jpg" width="100%" height="100%">
+							    	</div>
+							    	<div class="testogalleriaarchivio">
+							    	 <a  class="a" href="acque.html">Acque / Laghi / <br>Laghetto di Taneda</a>
+							    	</div>
+							    </td>
+							    <td style="width:16.6%;">
+							    	<div class="colorblue">
+							    		<img src="img_archivio/lago tom.png" width="100%" height="100%">
+							    	</div>
+							    	<div class="testogalleriaarchivio">
+							    	 <a  class="a" href="acque.html">Acque / Laghi / <br>Lago di Tom</a>
+							    	</div>
+							    </td>
+							    <td style="width:16.6%;">
+							    	<div class="colorblue">
+							    		<img src="img_archivio/lago mottone.jpg" width="100%" height="100%">
+							    	</div>
+							    	<div class="testogalleriaarchivio">
+							    	 <a  class="a" href="acque.html">Acque / Laghi / <br>Mottone</a>
+							    	</div>
+							    </td>
+							    <td style="width:16.6%;">
+							    	<div class="colorblue">
+							    		<img src="img_archivio/lago Murinascia.jpg" width="100%" height="100%">
+							    	</div>
+							    	<div class="testogalleriaarchivio">
+							    	 <a  class="a" href="acque.html">Acque / Laghi / <br>Murinascia</a>
+							    	</div>
+							    </td>
+							    <td style="width:16.6%;">
+							    	<div class="colorblue">
+							    		<img src="img_archivio/Lago_cadagno.jpg" width="100%" height="100%">
+							    	</div>
+							    	<div class="testogalleriaarchivio">
+							    	 <a  class="a" href="acque.html">Acque / Meromissi / <br>Lago Cadagno</a>
+							    	</div>
+							    </td>
+							    <td style="width:16.6%;">
+							    	<div class="colorblue">
+							    		<img src="img_archivio/Fungo_Mazza_di_tamburo.jpg" width="100%" height="100%">
+							    	</div>
+							    	<div class="testogalleriaarchivio">
+							    	 <a  class="a" href="botanica.html">Botanica / Funghi / <br>Mazza di Tamburo</a>
+							    	</div>
+							    </td>
+							  </tr>
+
+							  <tr> <!-- Riga da 4 -->
+							  	<td style="width:16.6%;">
+							    	<div  class="colorblue">
+							    		<img src="img_archivio/Pino_Cembro.jpg" width="100%" height="100%">
+							    	</div>
+							    	<div class="testogalleriaarchivio">
+							    	 <a  class="a" href="botanica.html">Botanica / Lariceto / <br>Pino Cembro</a>
+							    	</div>
+							    </td>
+							  	<td style="width:16.6%;">
+							    	<div class="colorblue">
+							    		<img src="img_archivio/Tritone_alpestre.jpg" width="100%" height="100%">
+							    	</div>
+							    	<div class="testogalleriaarchivio">
+							    	 <a  class="a" href="zoologia.html">Zoologia / Anfibi e Rettili / <br>Tritone alpestre</a>
+							    	</div>
+							    </td>
+							    <td style="width:16.6%;">
+							    	<div class="colorblue">
+							    		<img src="img_archivio/Stambecco.jpg" width="100%" height="100%">
+							    	</div>
+							    	<div class="testogalleriaarchivio">
+							    	 <a  class="a" href="zoologia.html">Zoologia / Mammiferi / <br>Stambecco</a>
+							    	</div>
+							    </td>
+							    <td style="width:16.6%;">
+							    	<div class="colorblue">
+							    		<img src="img_archivio/Culbianco_Uccello.jpg" width="100%" height="100%">
+							    	</div>
+							    	<div class="testogalleriaarchivio">
+							    	 <a  class="a" href="zoologia.html">Zoologia / Uccelli / <br>Culbianco</a> 
+							    	</div>
+							    </td>
+							    <td style="width:16.6%;">
+							    	<div class="colorblue">
+							    		<img src="img_archivio/Merlo_dal_collare.jpg" width="100%" height="100%">
+							    	</div>
+							    	<div class="testogalleriaarchivio">
+							    	 <a  class="a" href="zoologia.html">Zoologia / Uccelli / <br>Merlo dal collare</a> 
+							    	</div>
+							    </td>
+							    <td style="width:16.6%;">
+							    	<div class="colorblue">
+							    		<img src="img_archivio/Sordone.jpg" width="100%" height="100%">
+							    	</div>
+							    	<div class="testogalleriaarchivio">
+							    	 <a  class="a" href="zoologia.html">Zoologia / Uccelli / <br>Sordone</a>
+							    	</div>
+							    </td>
+							  </tr>
+							  
+							</tbody>
+							</table>
+						</div>
+					</div>
+		
+
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$(".table_filter").each(function() {
+		     $(this).click(function(){
+			     $(this).toggleClass("active"); 
+
+
+			     	if ($(this).hasClass("active")){
+						var toRemove = '〇';
+						var toReplace = '◉';
+
+				   	 
+					}
+					else{
+						var toRemove = '◉';
+						var toReplace = '〇';
+
+					}
+
+					$(this).html( $(this).text().replace(toRemove,toReplace));
+					$.fn.tableFilter();
+					
+
+
+
+			  }); 
+		});
+
+		$.fn.tableFilter = function(){ 
+			var value =''
+
+		    $(".table_filter").each(function() {
+		    	if ($(this).hasClass("active")){
+		    		if(value != ''){
+		    			var toRemove = '◉';
+		    			value = value +","+ $(this).text().replace(toRemove,'').toLowerCase();
+					}
+					else
+					{
+						var toRemove = '◉';
+						value = $(this).text().replace(toRemove,'').toLowerCase();
+					}
+				}
+			});
+
+
+			var split = value.split(",");
+
+
+
+		   	$("#myTable td").filter(function() {
+		   		var flag = true;
+		   		for (i = 0; i < split.length; i++) {
+			 		if ($(this).text().toLowerCase().indexOf(split[i] ) == -1){
+		   				flag = false
+		   				break;
+		   			}
+			 	}
+
+			 	$(this).toggle(flag)
+			});
+		}
+
+
+
+		$(".table_filter").on("keyup", function() {
+			var value = $(this).val().toLowerCase();
+			$("#myTable tr").filter(function() {
+			 	$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+			});
+		});
+	});
+
+	/*Finestra-filtro*/
+    let acc = document.getElementsByClassName("filter");
+	let i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    
+    this.classList.toggle("active");
+
+    
+    let panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+
+
+
+ </script>
+
+
+</body>
+</html>

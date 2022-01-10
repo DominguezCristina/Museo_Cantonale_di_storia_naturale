@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Archivio+Diorami</title>
+
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  	<link rel="stylesheet" type="text/css" href="CSS/style.css">
+	
+</head>
+<body>
+<style>
+	.grid-container {
+	  display: grid;
+	  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+	  grid-gap: 15px;
+	  grid-row-gap:40px;
+	  background-color:#E5E5E5;
+	  padding: 0px 0px 0px 0px;
+	  margin-bottom:0px; 
+	}
+
+	.a:visited {
+  	color: #18171C;
+	}
+
+	.bottonediorami2:hover {
+	font-size:3vw;
+	font-family:Neue Haas Grotesk Text Pro;
+	font-weight:300;
+	text-align: center;
+	display: block;
+	width:14vw;
+	height:4vw;
+	border-radius:40px;
+	border:0.05vw solid #18171C;
+	background-color:#744b3a;
+	cursor:pointer;
+	text-decoration: none;
+	justify-content: center;
+	color:#E5E5E5;
+	margin-bottom:0px;
+	margin-top: 150px;
+
+	}
+
+	.bottonediorami2 {
+	font-size:3vw;
+	font-family:Neue Haas Grotesk Text Pro;
+	font-weight:300;
+	text-align: center;
+	display: block;
+	width:14vw;
+	height:4vw;
+	border-radius:40px;
+	border:0.05vw solid #18171C;
+	background-color:#E5E5E5;
+	cursor:pointer;
+	text-decoration: none;
+	justify-content: center;
+	color:#18171C;	
+	margin-bottom:0px;
+	margin-top: 150px;
+	}
+
+	.bottonearchivio2:hover, .bottonearchivio2.active {
+	font-size:3vw;
+	font-family:Neue Haas Grotesk Text Pro;
+	font-weight:300;
+	text-align: center;
+	display: block;
+	width:14vw;
+	height:4vw;
+	border-radius:40px;
+	border:0.05vw solid #18171C;
+	background-color:#744b3a;
+	cursor:pointer;
+	text-decoration: none;
+	justify-content: center;
+	color:#E5E5E5;	
+	margin-bottom:0px;
+	margin-left:30px;
+	margin-top: 150px;
+	}
+
+	.bottonearchivio2 {
+	font-size:3vw;
+	font-family:Neue Haas Grotesk Text Pro;
+	font-weight:300;
+	text-align: center;
+	display: block;
+	width:14vw;
+	height:4vw;
+	border-radius:40px;
+	border:0.05vw solid #18171C;
+	background-color:#E5E5E5;
+	cursor:pointer;
+	text-decoration: none;
+	justify-content: center;
+	color:#18171C;
+	margin-bottom:0px;
+	margin-left:30px;
+	margin-top: 150px;
+	}
+
+	.paragrafointro {
+	font-size:2vw;
+	font-family:Neue Haas Grotesk Text Pro;
+	font-weight:500;
+	display:block;
+	line-height:1.1;
+	text-align:justify;
+	text-justify:inter-word;
+	margin:15px 0px 15px 0px;
+	color:#18171c;
+	}
+
+	.paragrafotesto {
+	font-size:1.1vw;
+	font-family:Neue Haas Grotesk Text Pro;
+	font-weight:500;
+	display:block;
+	line-height:1.1;
+	text-align:justify;
+	text-justify:inter-word;
+	color:#18171c;
+	}
+
+	.colorblueL {
+	background-color:#1E1EF0;
+	margin-left: 30px;
+	margin-right: 7.5px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	overflow: hidden;
+	max-height: 100%;
+	max-width: 100%;
+	}
+
+	.colorblueR {
+	background-color:#1E1EF0;
+	margin-right:30px;
+	margin-left: 7.5px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	overflow: hidden;
+	max-height: 100%;
+	max-width: 100%;
+	}
+
+	.segnapostoL {
+	margin-left: 30px;
+	margin-right: 7.5px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	max-height: 100%;
+	max-width: 100%;
+	}
+
+	.segnapostoR {
+	margin-right:30px;
+	margin-left: 7.5px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	max-height: 100%;
+	max-width: 100%;
+	}
+	
+	 .more {  
+         display: none;    
+     }  
+
+     .bottonelettura {
+     	border:none;
+     	background: #E5E5E5;
+     	color:#1E1EF0;
+     	padding-left: 0px;
+     }
+
+     .bottonelettura:hover {
+     	border:none;
+     	background: #E5E5E5;
+     	color:#1E1EF0;
+     	padding-left: 0px;
+     	text-decoration: underline;
+     }
+
+</style>
+	<marquee direction="left" loop="-1" behavior="alternate" scrolldelay="60">
+	<h1>Museo Cantonale di storia naturale</h1></marquee>
+			<div style="color:#E5E5E5" class="span_12 paragrafobase">L’intento di questa interfaccia è di catalogare tutti gli elementi presenti al Museo cantonale di storia naturale, tra cui le acque, la botanica, la mineralogia, la paleontologia, il territorio e la zoologia, in modo da permettere all’utente di visualizzare informazioni più esaustive nel ramo scientifico e di esplorare gli spazi espositivi da remoto.</div>
+
+			<!-- Bottoni -->
+			<div class="flex griglia">
+				<a class="bottonearchivio2 span_2 active" href="index.html">archivio</a>
+				<div class="span_4"></div>
+				<a class="bottonediorami2 span_2 a" href="diorami.html">diorami</a>
+			</div>
+
+				<!-- Filtro -->
+				<div class="flex griglia">
+					<button class="span_12 filter"> Filtro </button>
+						<div class="span_12 panel">
+						<div class="container griglia">			
+							<table class="table span_12 tablestile">
+							<thead>
+							  <tr>
+							  	<th style="width:16.6%;" class="thstile2"></th>
+							    <th style="width:16.6%;" class="thstile2"></th>
+							    <th style="width:16.6%;" class="thstile2">Tipologia</th>
+							    <th style="width:16.6%;" class="thstile2">Nome</th>
+							    <th style="width:16.6%;" class="thstile2">Luogo</th>
+							    <th style="width:16.6%;" class="thstile2">Tipo di supporto</th>
+							  </tr>							   
+							</thead>
+							  <tr>
+							  	<td style="width:16.6%;" class="tdstile"></td>
+							    <td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Funghi
+									</button>
+								</td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Mazza di Tamburo
+									</button>
+								</td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Bellinzona
+									</button>
+								</td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Audio
+									</button>
+								</td>
+							  </tr>
+							  <tr>
+							   	<td style="width:16.6%;" class="tdstile"></td>
+							    <td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Lariceto
+									</button>
+								</td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Pino Cembro
+									</button>
+								</td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Blenio
+									</button>
+								</td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Immagini
+									</button>
+								</td>
+							  </tr>
+							  <tr>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							    <td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Ontaneto
+									</button>
+								</td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Ontaneto X
+									</button>
+								</td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Leventina
+									</button>
+								</td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Mappe
+									</button>
+								</td>
+							  </tr>
+							  <tr>
+							  	<td style="width:16.6%;" class="tdstile"></td>
+							    <td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Praterie
+									</button>
+								</td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Praterie e pascoli
+									</button>
+								</td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Locarno
+									</button>
+								</td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Testi
+									</button>
+								</td>
+							  </tr>
+							  <tr>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							    <td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Pietraie
+									</button>
+								</td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Pietraie, rupi e ghiacciai
+									</button>
+								</td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Lugano
+									</button>
+								</td>
+								<td style="width:16.6%;" class="tdstile"></td>
+							  </tr>
+							    <tr>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							    <td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Brughiera
+									</button>
+								</td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Brughiera X
+									</button>
+								</td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Maggia
+									</button>
+								</td>
+								<td style="width:16.6%;" class="tdstile"></td>
+							  </tr>
+							   <tr>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							   	<td style="width:16.6%;" class="tdstile">
+							   		<button class="table_filter">
+										〇 Paludi
+									</button>
+							   	</td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Paludi e torbiere
+									</button>
+								</td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Mendrisio
+									</button>
+								</td>
+								<td style="width:16.6%;" class="tdstile"></td>
+							  </tr>
+							  <tr>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							   	<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Riviera
+									</button>
+								</td>
+								<td style="width:16.6%;" class="tdstile"></td>
+							  </tr>
+							</table>
+						</div>
+					</div>
+				</div>
+				
+						
+			<!-- Tabella -->	
+			<div class="grid-container">
+				<div style="margin:0px" class="container span_12">
+							<table class="table tablestile">
+							<tbody id="myTable">
+								<!-- Sezione -->
+							  	<tr style="border-top: 0.05vw solid #18171C; margin-top:30px; width:100%" class="tr"> 
+							    	<td style="width:50%; background: #744b3a;">
+							    		<div style="margin-left: 30px; margin-right: 7.5px; color:#E5E5E5" class="paragrafointro">
+											 Botanica
+											 <br>
+											 <br>										
+										</div>
+										<div class="colorblue colorblueL">
+							    			<img src="img_archivio/Botanica_intro_1.jpg" width="100%" height="100%">
+							    		</div>
+							    		<div style="margin-left: 30px; margin-right: 7.5px; margin-bottom: 30px; color: #E5E5E5" class="paragrafotesto">
+											  Inoltre, ben una novantina di specie della flora nazionale sono presenti in Svizzera nel solo Ticino e un’altra decina è diffusa in Ticino e in sole 2 o 3 altre località svizzere.
+											  La posizione geografica, la varietà di climi e di suoli, le notevoli differenze di altitudine e le complesse vicende geo–storiche hanno contribuito a determinare in Ticino una pregevole diversità vegetazionale e floristica.
+											  Il Ticino, quinto cantone per estensione della Svizzera (6,8% della superficie nazionale), è per queste ragioni al secondo posto (subito dopo il Vallese) per numero di specie vegetali. Sono presenti infatti oltre 2500 specie di piante vascolari spontanee, tenuto conto anche delle specie esotiche naturalizzate, a cui occorre aggiungerne altrettante coltivate nei giardini grazie alla particolare mitezza del clima.
+										</div>	
+							    	</td>
+							    	<td style="width:50%; background: #744b3a;">
+							    		<div style="margin-right: 30px; margin-left: 7.5px; color: #E5E5E5" class="paragrafointro">
+											 Il settore Botanica si occupa degli aspetti inerenti la vegetazione e la flora del Cantone Ticino.
+										</div> 
+										<div class="colorblue colorblueR">
+							    			<img src="img_archivio/Botanica_intro_2.jpg" width="100%" height="100%">
+							    		</div>
+							    		<div style="margin-right: 30px; margin-left: 7.5px; margin-bottom: 30px; color: #E5E5E5" class="paragrafotesto">	
+											  Il Cantone appartiene inoltre a una zona floristica d’incontro o sovrapposizione degli areali di distribuzione di specie appartenenti a tutti i 7 diversi elementi floristici europei. Così, varie essenze orientali e occidentali trovano proprio in Ticino il loro limite di diffusione. Ne consegue, che in territori talvolta assai circoscritti, come per esempio il Monte di Caslano, o il Monte San Giorgio, sono presenti piante dell’elemento floristico boreal–subalpino accanto a piante di quello sub–mediterraneo. Storicamente la straordinaria varietà floristica del Cantone fu messa in evidenza già nel Settecento, coinvolgendo da allora numerosi botanici.
+										</div>	
+							    	</td>							    	 
+							  	</tr>
+							  	<!-- Sezione -->
+							  	<tr style="border-top: 0.05vw solid #18171C; margin-top:30px; width:100%" class="tr"> 
+							    	<td style="width:50%; background: #E5E5E5">
+							    		<div style="margin-left: 30px; margin-right: 7.5px" class="paragrafointro">
+											 Funghi
+											 <br>
+											 <br>
+											 <br>
+										</div>
+										<div class="colorblue colorblueL">
+							    			<img src="img_archivio/Muschi_intro_1.jpg" width="100%" height="100%">	
+							    		</div> 		
+										<div style="margin-left: 30px; margin-right: 7.5px; margin-bottom: 30px" class="paragrafotesto">
+											 Il Cantone Ticino, grazie alla ricchezza e alla varietà degli ambienti naturali rappresenta un territorio di notevole interesse micologico. L'andar per funghi è per molti ticinesi una tradizione. La grande varietà geologica e climatica e la conseguente ricchezza floristica favorisce la crescita di numerose specie di funghi, alcune delle quali molto rare. Fino ad oggi sono state censite ca. 3000 specie e ogni anno questo numero aumenta. A basse quote si possono reperire specie tipiche della flora mediterranea, mentre a nord del Cantone troviamo specie artico–alpine.
+										</div>						
+							    	</td>
+							    	<td style="width:50%; background: #E5E5E5">
+							    		<div style="margin-right: 30px; margin-left: 7.5px;" class="paragrafointro">
+											 Il settore micologico del Museo cantonale di storia naturale si occupa di macromiceti (principalmente Basidiomiceti, Ascomiceti e Mixomiceti) e di licheni.
+										</div> 
+										<div class="colorblue colorblueR">
+							    			<img src="img_archivio/Funghi_intro_1.jpg" width="100%" height="100%">
+							    		</div>	
+										<div style="margin-right: 30px; margin-left: 7.5px; margin-bottom: 30px" class="paragrafotesto">
+											 L’attività di questo reparto è cominciata nel 1978 con l’allestimento di un’esposizione didattica di funghi liofilizzati (essiccati sotto vuoto, i reperti congelati mantengono inalterata forma e proporzioni), a disposizione delle scuole e della popolazione (esposizione permanente). Parallelamente a quella dei liofilizzati, iniziò anche la costituzione della collezione dei funghi essiccati (fungario o ‟erbario micologico”) che documenta in modo scientifico, con materiale datato e localizzato, la ricchezza micologica del Cantone Ticino e che raccoglie importanti campioni di riferimento.
+											 Il settore micologico è una peculiarità del Museo di storia naturale di Lugano: in Svizzera sono pochissimi gli altri istituti che si occupano di funghi.
+										</div> 
+							    	</td>							    	 
+							  	</tr>
+							  	<!-- Sezione -->
+							  	<tr style="border-top: 0.05vw solid #18171C; margin-top:30px; width:100%" class="tr"> 
+							    	<td style="width:50%; background: #E5E5E5">
+							    		<div style="margin-left: 30px; margin-right: 7.5px;" class="paragrafointro">
+											 Mazza di Tamburo / <br>
+											 Funghi
+											 <br>
+											 <br>
+											 <br>
+											 <br>
+											 <br>
+										</div>
+										<div class="segnapostoL">
+							    			<img src="img_archivio/segnaposto.jpg" width="100%" height="100%">	
+							    		</div> 	
+										<div style="margin-left: 30px; margin-right: 7.5px; margin-bottom: 30px" class="paragrafotesto">
+											 <div style="font-weight: 500; font-size: 1.4vw; text-indent: 50px;">Distribuzione e habitat</div>
+											 Vive spesso gregario, indifferentemente in boschi di latifoglie o di conifere, come nei prati, nelle radure e sui bordi della strada. È diffuso in Nord America e in Europa. Compare dall’estate all’autunno. <br>
+											 <div style="font-weight: 500; font-size: 1.4vw; text-indent: 50px;">Descrizione</div>
+											 Il cappello è inizialmente sferoidale, poi convesso e piano a maturità; è dotato di umbone bruno o bruno–grigio, liscio al centro e quindi coperto di scaglie fioccose e brunicce, con caratteristica disposizione radiale, sempre più rade verso il margine che si presenta sfrangiato. La cuticola è color nocciola–biancastra, fibrillosa e setosa. Di dimensioni ragguardevoli che vanno dai 10 finanche ai 25 cm.
+											 <span class = "dots"></span> 
+											 <span class = "more">  
+											 Le lamelle sono fitte, numerose, irregolari e di colore bianco o giallastro, poi tendenti al color rosato–bruno o cipria e imbrunenti al tocco. Ventricose ed alte, mostrano un evidente distacco dal gambo.
+											 Il gambo è assai slanciato e sottile (20–45 cm x 10–20 mm), di diametro pressoché costante e normalmente diritto, fibroso, duro, cavo e cilindrico. Bulboso al piede, è adornato da un anello doppio, scorrevole e ampio. Al di sotto dell’anello è presenta la caratteristica ed evidente squamatura color caffellatte.
+											 La carne è bianca e tendente al rosato o al rossastro al taglio, fioccosa, tenera, poco consistente e fragile nel cappello, è fibrosa (quasi legnosa) nel gambo.<br>
+											 Odore: leggero e di nocciola (talvolta di urina sul cappello).<br>
+											 Sapore: dolce, di nocciola. <br>
+											 Come per altre specie fungine, dopo la cottura la ‟resa” non è molto elevata in quanto i cappelli anche se di dimensioni enormi si riducono considerevolmente in larghezza.
+											 </span>  
+											 <button class= "read bottonelettura">+ Contenuto</button>
+										</div>		
+										
+							    	</td>
+							    	<td style="width:50%; background: #E5E5E5">
+							    		<div style="margin-right: 30px; margin-left: 7.5px;" class="paragrafointro">
+											 La mazza di tamburo è un fungo basidiomicete della famiglia Agaricaceae. È uno dei più vistosi, conosciuti ed apprezzati funghi commestibili. <br>La sua tossicità da cruda, caratteristica poco nota e comune ad altre specie congeneri, è causa di non infrequenti intossicazione.
+										</div> 	
+										<div class="colorblue colorblueR">
+							    			<img src="img_archivio/Fungo_Mazza_di_tamburo.jpg" width="100%" height="100%">
+							    		</div>	
+										<div style="margin-right: 30px; margin-left: 7.5px; margin-bottom: 30px;" class="paragrafotesto">
+											<div style="font-weight: 500; font-size: 1.4vw; text-indent: 50px;">Commestibilità</div>
+											 Commestibile con cautela: fungo leggermente tossico da crudo, che necessita di prolungata cottura, ne va perciò evitata la preparazione alla piastra o alla griglia, in quanto le parti interne potrebbero rimanere parzialmente crude. Va consumato solo il cappello.Si presta per la preparazione di cotolette, quando il cappello è totalmente aperto e con le lamelle ancora bianche, mentre con gli esemplari più giovani non ancora aperti si possono preparare frittate.
+											 Gli esemplari essiccati spontaneamente sono più aromatici e dovrebbero aver perso la loro tossicità; si consiglia comunque di consumarli previa cottura. Si raccomanda di non immergere in acqua il gambo degli esemplari ancora chiusi, per accelerarne l’apertura. Ciò potrebbe comportare una maggiore tossicità del fungo. 
+											 <span class = "dots"></span> 
+											 <span class = "more"> 
+											 <br>
+											 <div style="font-weight: 500; font-size: 1.4vw; text-indent: 50px;">Specie simili</div>
+											 Difficilmente confondibile con altre specie congeneri, in virtù della sua notevole stazza. Tuttavia, in condizioni climatiche ed ambientali particolari, la M. procera si presenta di dimensioni assai ridotte rispetto alla norma e pertanto può essere confusa facilmente con specie somiglianti. Particolarmente pericolosa è la confusione con le specie del genere Lepiota, di dimensioni molto più piccole (diametro di pochi cm), molte delle quali sono velenose o mortali.
+											 </span>  
+											 <button class= "read bottonelettura">+ Contenuto</button> 
+										</div>			
+							    	</td>							    	 
+							  	</tr>
+							  	<!-- Sezione -->
+							  	<tr style="border-top: 0.05vw solid #18171C; margin-top:30px; width:100%" class="tr"> 
+							    	<td style="width:50%; background: #E5E5E5">
+							    		<div style="margin-left: 30px; margin-right: 7.5px" class="paragrafointro">
+											 Lariceto
+											 <br>
+											 <br>
+											 <br>
+										</div>
+										<div class="segnapostoL">
+							    			<img src="img_archivio/segnaposto.jpg" width="100%" height="100%">	
+							    		</div> 		
+										<div style="margin-left: 30px; margin-right: 7.5px; margin-bottom: 30px" class="paragrafotesto">
+											 Possiede una caratteristica che lo distingue totalmente dalle altre conifere europee, infatti il larice comune, o alpino, perde totalmente le foglie in inverno. Questa caratteristica gli permette, senza dubbio, di avere una maggiore resistenza nei confronti del freddo e di poter essere riconosciuto a prima vista in un bosco montano invernale. In primavera la pianta mette su foglie verdi, aghiformi e resistenti, mentre in autunno tutto il fogliame diviene di colore giallo e cade al suolo. In Italia è molto comune in tutte le Alpi, dove si spinge anche a quote molto elevate (oltre i 2.500 metri). Dove il bosco lascia il posto alle praterie alpine si incontrano vecchi individui isolati, deformati dal vento e dalla neve. Il larice è una aghifoglia e caducifoglia, è molto longevo e può vivere migliaia di anni.
+										</div>						
+							    	</td>
+							    	<td style="width:50%; background: #E5E5E5">
+							    		<div style="margin-right: 30px; margin-left: 7.5px;" class="paragrafointro">
+											 Il larice comune (Larix decidua) è una conifera nativa delle montagne dell’Europa centrale, delle Alpi e dei Carpazi.
+										</div> 
+										<div class="colorblue colorblueR">
+							    			<img src="img_archivio/Lariceto_intro.jpg" width="100%" height="100%">
+							    		</div>	
+										<div style="margin-right: 30px; margin-left: 7.5px; margin-bottom: 30px" class="paragrafotesto">
+											 Il larice comune ha, presumibilmente, origini da un ceppo di pseudo-Larix provenienti dalle zone dell'Europa del nord e della Siberia venuto in Europa centrale e meridionale al tempo dell'ultima glaciazione. Una volta cominciato il ritiro dei ghiacci popolazioni di questa conifera sono rimaste isolate nelle montagne europee delle Alpi e, in minor parte, dei Carpazi. Rimasti soli in questa isola ecologica le popolazioni si sono evolute in modo autonomo diventando specie a sé stante. Il legno di larice comune è conosciuto fin dall’antichità per la sua durata e robustezza. Per la facile lavorazione, il suo bel colore rosso intenso, è apprezzato nei lavori di falegnameria, specie per gli esterni. Immerso in acqua, diviene resistentissimo. Come altre conifere, dalla resina si estrae la trementina (trementina di Venezia). 
+											 <span class = "dots"></span> 
+											 <span class = "more"> 
+											 La corteccia è impiegata per l’estrazione del tannino. Da sempre le popolazioni alpine hanno sfruttato il suo legno, è molto noto in Valle d’Aosta, in Trentino, in Alto Adige e nel bellunese il fatto di utilizzare come materiale da costruzione delle case il legno di questa conifera e addirittura intagliare un tipo di tegola di lunga durata per i tetti (in alcune vallate detta Schindola, Schindel o Scandola).
+											 Il legno di questa conifera, oltre ad essere materiale da costruzione, è da sempre usato come combustibile per stufe e camini. Le popolazioni locali lo sceglievano, inoltre, per le sue migliori caratteristiche ed il suo più elevato costo (grazie alla sua diffusione meno comune rispetto all’Abete rosso) per commercializzarlo.
+											  </span>  
+											 <button class= "read bottonelettura">+ Contenuto</button> 
+										</div> 
+							    	</td>							    	 
+							  	</tr>
+
+							  	<!-- Sezione -->
+							  	<tr style="border-top: 0.05vw solid #18171C; margin-top:30px; width:100%" class="tr"> 
+							    	<td style="width:50%; background: #E5E5E5">
+							    		<div style="margin-left: 30px; margin-right: 7.5px" class="paragrafointro">
+											 Lariceto / <br>
+											 Pino Cembro
+											 <br>
+											 <br>
+										</div>
+										<div class="segnapostoL">
+							    			<img src="img_archivio/segnaposto.jpg" width="100%" height="100%">	
+							    		</div> 		
+										<div style="margin-left: 30px; margin-right: 7.5px" class="paragrafotesto">
+											<div style="font-weight: 500; font-size: 1.4vw; text-indent: 50px;">Morfologia</div>
+											 Il suo legno è molto pregiato ed è usato in modo particolare per le sculture. È l’unico pino a 5 aghi presente spontaneamente in Europa.
+											 È un albero che può essere alto fino a 25 metri, anche se di solito non supera i 15, con chioma cilindrico-conica. È una specie longeva.
+											 La corteccia si presenta grigiastra, sottile e liscia con tracce di resina nelle parti giovani, nelle parti adulte appare rugosa, screpolandosi in piccole placche con fessure rosso brunastre. Sono aghiformi e raccolte in mazzette da 5, gli aghi sono lunghi 5–8 cm, di colore scuro sulla parte superiore e grigiastro su quella inferiore. Le foglie sono simili a quelle del Pinus Pinea.
+
+
+										</div>						
+							    	</td>
+							    	<td style="width:50%; background: #E5E5E5">
+							    		<div style="margin-right: 30px; margin-left: 7.5px;" class="paragrafointro">
+											 Il Pino Cembro, detto anche semplicemente Cembro o Cirmolo, è un albero sempreverde aghifoglie del genere Pinus che vive sulle Alpi. 
+
+										</div> 
+										<div class="colorblue colorblueR">
+							    			<img src="img_archivio/Pino_Cembro.jpg" width="100%" height="100%">
+							    		</div>	
+										<div style="margin-right: 30px; margin-left: 7.5px;" class="paragrafotesto">
+											<div style="font-weight: 500; font-size: 1.4vw; text-indent: 50px;">Distribuzione e habitat</div>
+											 Specie montana, l’areale è disgiunto, con areale principale in Siberia centrale e disgiunzioni sull’arco alpino più due zone nei Balcani e in Europa centrale. Cresce a partire dai 1200 metri di quota fino al limite superiore dei boschi di conifere subalpini, trovando condizioni ottimali tra i 1600 e i 2100 m di altitudine, predilige suoli a reazione acida, ma può vivere anche su substrati calcarei acidificati o dilavati in superficie dall’azione delle acque meteoriche. Il pino cembro può formare boschi misti con l’abete rosso, con il larice o anche boschi puri, particolarmente pregiati, come il famoso Bosco dell’Alevè della Valle Varaita, nelle Alpi Cozie.
+											 <span class = "dots"></span> 
+											 <span class = "more">  
+											 In Piemonte è presente sulle Alpi Cozie e Marittime (nelle valli Varaita, Gesso, Maira, Stura, Susa, Chisone, Pesio) mentre è raro in Val Sesia e Ossola. Forma cembrete pure (1.500 ettari) e miste al larice (3.500 ettari) o con abete rosso; in passato è stata eliminata per far spazio al lariceto pascolato, oggi è in lenta ripresa. In Lombardia è molto diffuso nel Bormiese e nel Livignasco, dove forma sia boschi misti con il larice sia boschi puri, come la cembreta di Valfurva, mentre è presente solo in boschi misti nell’alta Val Chiavenna, Val Malenco, alta Val Camonica e Adamello, raro sulle Orobie. In Trentino è diffuso perlopiù in boschi misti in alta Val di Pejo, Val di Fumo, alta Val di Fassa, Val Travignolo e catena del Lagorai. In Alto Adige è presente in tutta la provincia, ma forma boschi puri soprattutto sulle Dolomiti in Val Gardena, Val Badia e alta Pusteria. Nel Veneto non forma mai boschi puri ma partecipa a formazioni miste con il larice e l’abete rosso, spingendosi a est fino alla conca di Misurina e a Sud fino al Passo Giau, Passo Falzarego, Passo San Pellegrino e Passo Valles. Manca nei boschi del Friuli in conseguenza del clima umido delle Alpi Carniche e Giulie.
+											 </span>  
+											 <button class= "read bottonelettura">+ Contenuto</button> 
+										</div> 
+							    	</td>							    	 
+							  	</tr>
+							  	
+							</tbody>
+							</table>
+				</div>
+			</div>
+				
+				
+				
+
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$(".table_filter").each(function() {
+		     $(this).click(function(){
+			     $(this).toggleClass("active"); 
+
+
+			     	if ($(this).hasClass("active")){
+						var toRemove = '〇';
+						var toReplace = '◉';
+
+				   	 
+					}
+					else{
+						var toRemove = '◉';
+						var toReplace = '〇';
+
+					}
+
+					$(this).html( $(this).text().replace(toRemove,toReplace));
+					$.fn.tableFilter();
+					
+
+
+
+			  }); 
+		});
+
+		$.fn.tableFilter = function(){ 
+			var value =''
+
+		    $(".table_filter").each(function() {
+		    	if ($(this).hasClass("active")){
+		    		if(value != ''){
+		    			var toRemove = '◉';
+		    			value = value +","+ $(this).text().replace(toRemove,'').toLowerCase();
+					}
+					else
+					{
+						var toRemove = '◉';
+						value = $(this).text().replace(toRemove,'').toLowerCase();
+					}
+				}
+			});
+
+
+			var split = value.split(",");
+
+
+
+		   	$("#myTable td").filter(function() {
+		   		var flag = true;
+		   		for (i = 0; i < split.length; i++) {
+			 		if ($(this).text().toLowerCase().indexOf(split[i] ) == -1){
+		   				flag = false
+		   				break;
+		   			}
+			 	}
+
+			 	$(this).toggle(flag)
+			});
+		}
+
+
+
+		$(".table_filter").on("keyup", function() {
+			var value = $(this).val().toLowerCase();
+			$("#myTable tr").filter(function() {
+			 	$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+			});
+		});
+	});
+
+	/*Finestra-filtro*/
+    let acc = document.getElementsByClassName("filter");
+	let i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    
+    this.classList.toggle("active");
+
+    
+    let panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+
+/*Read more*/
+$(document).ready(function(){  
+    $(".read").click(function(){  
+        $(this).prev().toggle();  
+        $(this).siblings('.dots').toggle();  
+        if($(this).text()=='+ Contenuto'){  
+            $(this).text('– Contenuto');  
+        }  
+        else{  
+            $(this).text('+ Contenuto');  
+        }  
+  
+    });  
+});  
+
+
+
+ </script>
+
+
+</body>
+</html>

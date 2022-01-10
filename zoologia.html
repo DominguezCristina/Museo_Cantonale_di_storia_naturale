@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Archivio+Diorami</title>
+
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  	<link rel="stylesheet" type="text/css" href="CSS/style.css">
+	
+</head>
+<body>
+<style>
+	.grid-container {
+	  display: grid;
+	  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+	  grid-gap: 15px;
+	  grid-row-gap:40px;
+	  background-color:#E5E5E5;
+	  padding: 0px 0px 0px 0px;
+	  margin-bottom:0px; 
+	}
+
+	.a:visited {
+  	color: #18171C;
+	}
+
+	.bottonediorami2:hover {
+	font-size:3vw;
+	font-family:Neue Haas Grotesk Text Pro;
+	font-weight:300;
+	text-align: center;
+	display: block;
+	width:14vw;
+	height:4vw;
+	border-radius:40px;
+	border:0.05vw solid #18171C;
+	background-color:#744b3a;
+	cursor:pointer;
+	text-decoration: none;
+	justify-content: center;
+	color:#E5E5E5;
+	margin-bottom:0px;
+	margin-top: 150px;
+
+	}
+
+	.bottonediorami2 {
+	font-size:3vw;
+	font-family:Neue Haas Grotesk Text Pro;
+	font-weight:300;
+	text-align: center;
+	display: block;
+	width:14vw;
+	height:4vw;
+	border-radius:40px;
+	border:0.05vw solid #18171C;
+	background-color:#E5E5E5;
+	cursor:pointer;
+	text-decoration: none;
+	justify-content: center;
+	color:#18171C;	
+	margin-bottom:0px;
+	margin-top: 150px;
+	}
+
+	.bottonearchivio2:hover, .bottonearchivio2.active {
+	font-size:3vw;
+	font-family:Neue Haas Grotesk Text Pro;
+	font-weight:300;
+	text-align: center;
+	display: block;
+	width:14vw;
+	height:4vw;
+	border-radius:40px;
+	border:0.05vw solid #18171C;
+	background-color:#744b3a;
+	cursor:pointer;
+	text-decoration: none;
+	justify-content: center;
+	color:#E5E5E5;	
+	margin-bottom:0px;
+	margin-left:30px;
+	margin-top: 150px;
+	}
+
+	.bottonearchivio2 {
+	font-size:3vw;
+	font-family:Neue Haas Grotesk Text Pro;
+	font-weight:300;
+	text-align: center;
+	display: block;
+	width:14vw;
+	height:4vw;
+	border-radius:40px;
+	border:0.05vw solid #18171C;
+	background-color:#E5E5E5;
+	cursor:pointer;
+	text-decoration: none;
+	justify-content: center;
+	color:#18171C;
+	margin-bottom:0px;
+	margin-left:30px;
+	margin-top: 150px;
+	}
+
+	.paragrafointro {
+	font-size:2vw;
+	font-family:Neue Haas Grotesk Text Pro;
+	font-weight:500;
+	display:block;
+	line-height:1.1;
+	text-align:justify;
+	text-justify:inter-word;
+	margin:15px 0px 15px 0px;
+	color:#18171c;
+	}
+
+	.paragrafotesto {
+	font-size:1.1vw;
+	font-family:Neue Haas Grotesk Text Pro;
+	font-weight:500;
+	display:block;
+	line-height:1.1;
+	text-align:justify;
+	text-justify:inter-word;
+	color:#18171c;
+	}
+
+	.colorblueL {
+	background-color:#1E1EF0;
+	margin-left: 30px;
+	margin-right: 7.5px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	overflow: hidden;
+	max-height: 100%;
+	max-width: 100%;
+	}
+
+	.colorblueR {
+	background-color:#1E1EF0;
+	margin-right:30px;
+	margin-left: 7.5px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	overflow: hidden;
+	max-height: 100%;
+	max-width: 100%;
+	}
+
+	.segnapostoL {
+	margin-left: 30px;
+	margin-right: 7.5px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	max-height: 100%;
+	max-width: 100%;
+	}
+
+	.segnapostoR {
+	margin-right:30px;
+	margin-left: 7.5px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	max-height: 100%;
+	max-width: 100%;
+	}
+	
+	 .more {  
+         display: none;    
+     }  
+
+     .bottonelettura {
+     	border:none;
+     	background: #E5E5E5;
+     	color:#1E1EF0;
+     	padding-left: 0px;
+     }
+
+     .bottonelettura:hover {
+     	border:none;
+     	background: #E5E5E5;
+     	color:#1E1EF0;
+     	padding-left: 0px;
+     	text-decoration: underline;
+     }
+
+     .animali {
+     	border:none;
+     	background: #E5E5E5;
+     	color:#1E1EF0;
+     	padding-left: 0px;
+     	cursor:pointer;
+     }
+
+        .animali:hover {
+     	border:none;
+     	background: #E5E5E5;
+     	color:#1E1EF0;
+     	padding-left: 0px;
+     	text-decoration: underline;
+     	cursor:pointer;
+     }
+
+</style>
+	<marquee direction="left" loop="-1" behavior="alternate" scrolldelay="60">
+	<h1>Museo Cantonale di storia naturale</h1></marquee>
+			<div style="color:#E5E5E5" class="span_12 paragrafobase">L’intento di questa interfaccia è di catalogare tutti gli elementi presenti al Museo cantonale di storia naturale, tra cui le acque, la botanica, la mineralogia, la paleontologia, il territorio e la zoologia, in modo da permettere all’utente di visualizzare informazioni più esaustive nel ramo scientifico e di esplorare gli spazi espositivi da remoto.</div>
+
+			<!-- Bottoni -->
+			<div class="flex griglia">
+				<a class="bottonearchivio2 span_2 active" href="index.html">archivio</a>
+				<div class="span_4"></div>
+				<a class="bottonediorami2 span_2 a" href="diorami.html">diorami</a>
+			</div>
+
+				<!-- Filtro -->
+				<div class="flex griglia">
+					<button class="span_12 filter"> Filtro </button>
+						<div class="span_12 panel">
+						<div class="container griglia">			
+							<table class="table span_12 tablestile">
+							<thead>
+							  <tr>
+							  	<th style="width:16.6%;" class="thstile2"></th>
+							    <th style="width:16.6%;" class="thstile2"></th>
+							    <th style="width:16.6%;" class="thstile2">Tipologia</th>
+							    <th style="width:16.6%;" class="thstile2">Nome</th>
+							    <th style="width:16.6%;" class="thstile2">Luogo</th>
+							    <th style="width:16.6%;" class="thstile2">Tipo di supporto</th>
+							  </tr>							   
+							</thead>
+							  <tr>
+							  	<td style="width:16.6%;" class="tdstile"></td>
+							    <td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Anfibi e rettili
+									</button>
+								</td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Lucertola vivipara
+									</button>
+								</td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Bellinzona
+									</button>
+								</td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Audio
+									</button>
+								</td>
+							  </tr>
+							  <tr>
+							   	<td style="width:16.6%;" class="tdstile"></td>
+							    <td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Mammiferi
+									</button>
+								</td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Rana rossa
+									</button>
+								</td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Blenio
+									</button>
+								</td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Immagini
+									</button>
+								</td>
+							  </tr>
+							  <tr>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							    <td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Uccelli
+									</button>
+								</td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Salamandra nera
+									</button>
+								</td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Leventina
+									</button>
+								</td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Mappe
+									</button>
+								</td>
+							  </tr>
+							  <tr>
+							  	<td style="width:16.6%;" class="tdstile"></td>
+							    <td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile">
+								</td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Tritone alpestre
+									</button>
+								</td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Locarno
+									</button>
+								</td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Testi
+									</button>
+								</td>
+							  </tr>
+							  <tr>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							    <td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Vipera comune
+									</button>
+								</td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Lugano
+									</button>
+								</td>
+								<td style="width:16.6%;" class="tdstile"></td>
+							  </tr>
+							    <tr>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							    <td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Camoscio
+									</button>
+								</td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Maggia
+									</button>
+								</td>
+								<td style="width:16.6%;" class="tdstile"></td>
+							  </tr>
+							   <tr>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							   	<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Capriolo
+									</button>
+								</td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Mendrisio
+									</button>
+								</td>
+								<td style="width:16.6%;" class="tdstile"></td>
+							  </tr>
+							  <tr>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							   	<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Cervo
+									</button>
+								</td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Riviera
+									</button>
+								</td>
+								<td style="width:16.6%;" class="tdstile"></td>
+							  </tr>
+														 
+							  <tr>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							   	<td style="width:16.6%;" class="tdstile"></td> 
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+									〇 Donnola
+									</button>
+								</td>
+								<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile"></td>
+							  </tr>
+							  <tr>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							   	<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Ermellino
+									</button>
+								</td>
+								<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile"></td>
+							  </tr>
+							  <tr>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							   	<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Faina
+									</button>
+								</td>
+								<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile"></td>
+							  </tr>
+							  <tr>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							   	<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Lepre alpina
+									</button>
+								</td>
+								<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile"></td>
+							  </tr>
+							  <tr>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							   	<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Martora
+									</button>
+								</td>
+								<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile"></td>
+							  </tr>
+							  <tr>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							   	<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Scoiattolo
+									</button>
+								</td>
+								<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile"></td>
+							  </tr>
+							  <tr>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							   	<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Stambecco
+									</button>
+								</td>
+								<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile"></td>
+							  </tr>
+							  <tr>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							   	<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Volpe
+									</button>
+								</td>
+								<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile"></td>
+							  </tr>
+							  <tr>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							   	<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile">
+								</td>
+								<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile"></td>
+							  </tr>
+							   <tr>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							   	<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Culbianco
+									</button>
+								</td>
+								<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile"></td>
+							  </tr>
+							  <tr>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							   	<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Merlo dal collare
+									</button>
+								</td>
+								<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile"></td>
+							  </tr>
+							  <tr>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							    <td style="width:16.6%;" class="tdstile"></td>
+							   	<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile">
+									<button class="table_filter">
+										〇 Sordone
+									</button>
+								</td>
+								<td style="width:16.6%;" class="tdstile"></td>
+								<td style="width:16.6%;" class="tdstile"></td>
+							</table>
+						</div>
+					</div>
+				</div>
+				
+						
+			<!-- Tabella -->	
+			<div class="grid-container">
+				<div style="margin:0px" class="container span_12">
+							<table class="table tablestile">
+							<tbody id="myTable">
+								<!-- Sezione -->
+							  	<tr style="border-top: 0.05vw solid #18171C; margin-top:30px; width:100%" class="tr"> 
+							    	<td style="width:50%; background: #744b3a;">
+							    		<div style="margin-left: 30px; margin-right: 7.5px; color:#E5E5E5" class="paragrafointro">
+											 Zoologia
+											 <br>
+											 <br>
+											 <br>											
+										</div>
+										<div class="colorblue colorblueL">
+							    			<img src="img_archivio/Zoologia_vertebrati_intro.jpg" width="100%" height="100%">
+							    		</div>
+										<div style="margin-left: 30px; margin-right: 7.5px; margin-bottom: 30px; color: #E5E5E5" class="paragrafotesto">
+							    		Con il solo 6,8% della superficie della Svizzera, il Cantone Ticino ospita una percentuale notevole delle specie di vertebrati distribuite sul territorio nazionale. Sono presenti nel Cantone, per esempio, il 62% dei pesci, circa il 75% dei mammiferi e più dell'80% dei rettili. Le quasi 300 specie di uccelli segnalate in Ticino dalla fine del secolo scorso ad oggi rappresentano a loro volta oltre il 40% dell'intera avifauna europea. Alcune specie sono presenti in Svizzera unicamente nel Ticino.
+							    		</div>
+							    	</td>
+							    	<td style="width:50%; background: #744b3a;">
+							    		<div style="margin-right: 30px; margin-left: 7.5px; color: #E5E5E5" class="paragrafointro">
+											 Il settore Zoologia si occupa degli aspetti inerenti alle specie dei vertebrati e delle specie degli invertebrati distribuiti sul territorio nazionale
+										</div> 
+										<div class="colorblue colorblueR">
+							    			<img src="img_archivio/Zoologia_invertebrati_intro.jpg" width="100%" height="100%">
+							    		</div>
+							    		<div style="margin-right: 30px; margin-left: 7.5px; margin-bottom: 30px; color: #E5E5E5" class="paragrafotesto">	
+											 Il settore di zoologia degli invertebrati copre l’intero spettro degli animali cosiddetti ‟inferiori”, uno sterminato mondo di organismi che annovera fra le sue fila le spugne, i cnidari (idre, meduse e affini), le molte forme di vermi piatti, a nastro e cilindrici (tra cui il comune lombrico), i molluschi (chiocciole, limacce, bivalvi), gli aracnidi (ragni, opilioni, scorpioni e affini), i miriapodi (millepiedi e centopiedi), i crostacei (gamberi e altri organismi acquatici del plancton), nonché tutti gli insetti (dalle zanzare alle farfalle, dalle api alle formiche, dalle libellule ai cervi volanti).
+										</div>	
+							    	</td>							    	 
+							  	</tr>
+							  	<!-- Sezione -->
+							  	<tr style="border-top: 0.05vw solid #18171C; margin-top:30px; width:100%" class="tr"> 
+							    	<td style="width:50%; background: #E5E5E5">
+							    		<div style="margin-left: 30px; margin-right: 7.5px" class="paragrafointro">
+											 Mammiferi
+											 <br>
+											 <br>
+											 <br>
+										</div>
+										<div class="colorblue colorblueL">
+							    			<img src="img_archivio/Mammiferi_intro_2.jpg" width="100%" height="100%">	
+							    		</div> 		
+										<div style="margin-left: 30px; margin-right: 7.5px; margin-bottom: 30px" class="paragrafotesto">
+											 La classe dei mammiferi conta 5 500 specie attualmente viventi, variabili in forma e dimensioni: dai pochi centimetri e due grammi di peso del mustiolo agli oltre 30 metri e 150 tonnellate della balenottera azzurra, il più grande mammifero finora apparso sulla Terra. I mammiferi colonizzano praticamente ogni ambiente, dalle calotte glaciali ai caldi deserti: alcuni gruppi (sirenii, pinnipedi, cetacei) sono riusciti a colonizzare con successo anche l’ambiente 
+											 acquatico, mentre altri hanno sviluppato delle ali membranacee e sono perciò in grado di volare (chirotteri).
+										</div>						
+							    	</td>
+							    	<td style="width:50%; background: #E5E5E5">
+							    		<div style="margin-right: 30px; margin-left: 7.5px;" class="paragrafointro">
+											 I mammiferi (Mammalia Linnaeus) sono una classe di vertebrati a diffusione cosmopolita caratterizzata dall’allattamento della prole.
+										</div> 
+										<div class="colorblue colorblueR">
+							    			<img src="img_archivio/Mammiferi_intro_1.jpg" width="100%" height="100%">
+							    		</div>	
+										<div style="margin-right: 30px; margin-left: 7.5px; margin-bottom: 30px" class="paragrafotesto">
+											 Nonostante tali differenze di dimensioni e abitudini di vita, tutti i mammiferi sono accomunati dall’essere omeotermi ovvero endotermi, dal presentare viviparità (con l’eccezione dei monotremi, che sono ovipari) e dall’avere cure parentali che prevedono anche l’allattamento della prole: tutti fattori che sono stati determinanti per consentire a questa classe di espandere notevolmente il proprio areale nelle nicchie rimaste vuote dopo la scomparsa dei dinosauri.
+
+										</div> 
+							    	</td>							    	 
+							  	</tr>
+							  	<!-- Sezione -->
+							  	<tr style="border-top: 0.05vw solid #18171C; margin-top:30px; width:100%" class="tr"> 
+							    	<td style="width:50%; background: #E5E5E5">
+							    		<div style="margin-left: 30px; margin-right: 7.5px;" class="paragrafointro">
+											 Mammiferi / <br>
+											 Stambecco
+											 <br>
+											 <br>
+											 <br>
+											 <br>
+											 <div class="segnapostoL">
+							    				<img src="img_archivio/segnaposto.jpg" width="100%" height="100%">	
+							    			 </div> 
+							    			 <div style="margin-right: 30px; margin-left: 7.5px; margin-bottom: 30px" class="paragrafotesto">
+								    			<div style="font-weight: 500; font-size: 1.4vw; text-indent: 50px;">Storia</div>
+												 Circa 100.000 anni fa, lo stambecco viveva in tutte le regioni rocciose dell’Europa centrale. È stato anche fonte d’ispirazione per i popoli del Paleolitico, che lo disegnavano nelle grotte in cui vivevano, come appare nelle pitture murali delle grotte di Lascaux in Francia.
+												 Fino al XV secolo, era presente lungo tutto l’arco alpino, ma lo sviluppo delle armi da fuoco segnò ben presto la sua fine in quei territori. La medicina dell’epoca poi, tutta incentrata sulla superstizione, gli fu fatale. 
+												 <span class = "dots"></span> 
+												 <span class = "more">  
+												 Le corna, ridotte in polvere, furono utilizzate come rimedio contro l’impotenza ed il sangue come rimedio per i calcoli renali. Lo stomaco, infine, fu indicato per combattere la depressione. Tali credenze persistettero fino al XIX secolo, quando ormai si contavano solo poche centinaia di individui nelle Alpi italiane e francesi, mentre era completamente scomparso in Svizzera.
+												 La specie deve la sua sopravvivenza alla famiglia reale italiana. Fu infatti il re Vittorio Emanuele II che fece proteggere, nel 1856, gli ultimi esemplari, per riservarli alla sua caccia personale in una riserva privata situata in Valsavarenche, dove, per suo ordine, un gruppo di guardacaccia li proteggeva da altri cacciatori. Ad oggi, la Valle d’Aosta ed il Piemonte sono le uniche regioni dell’arco alpino in cui la specie non sia mai scomparsa in tempi storici.
+												 </span>  
+												 <button class= "read bottonelettura">+ Contenuto</button> 
+										</div>			
+							    	</td>
+							    	<td style="width:50%; background: #E5E5E5">
+							    		<div style="margin-right: 30px; margin-left: 7.5px;" class="paragrafointro">
+											 Lo stambecco delle Alpi (Capra ibex) è un mammifero dell’ordine degli Artiodattili, della famiglia dei Bovidi e della sottofamiglia dei Caprini, diffuso lungo l’Arco alpino.
+										</div>
+										<div class="colorblue colorblueR">
+							    			<img src="img_archivio/Stambecco.jpg" width="100%" height="100%">
+							    		</div>
+							    		<div style="margin-right: 30px; margin-left: 7.5px; margin-bottom: 30px" class="paragrafotesto">
+								    			 <div style="font-weight: 500; font-size: 1.4vw; text-indent: 50px;">Distribuzione e habitat</div>
+												 Lo stambecco è attualmente diffuso in tutto l’arco alpino, dalle Alpi Marittime a ovest sino alle Alpi di Carinzia e di Slovenia a est, ad altitudini comprese tra 500 e 3000 m s.l.m. Sebbene il suo areale si sia notevolmente ampliato nel corso del XX secolo, la sua distribuzione è tuttora abbastanza frammentaria.
+												 Fatta eccezione per quella del Parco nazionale del Gran Paradiso, tutte le attuali popolazioni sono il frutto di reintroduzioni (Francia, Svizzera, Austria e Germania) o di nuova introduzione (Slovenia e Bulgaria).
+												 <span class = "dots"></span> 
+											 	<span class = "more">  
+											 	 Il suo habitat tipico è costituito dagli ambienti rocciosi di alta quota, al di sopra della linea degli alberi. I costoni rocciosi scoscesi esposti a sud ricchi di vegetazione erbacea sono l’ambiente preferito. A livello subalpino li si può incontrare in aree aperte e soleggiate con presenza di affioramenti rocciosi.
+											 	 </span>  
+											 	 <button class= "read bottonelettura">+ Contenuto</button>
+											 </div>	
+							    	</td>							    	 
+							  	</tr>
+							  	<!-- Sezione -->
+							  	<tr style="border-top: 0.05vw solid #18171C; margin-top:30px; width:100%" class="tr"> 
+							    	<td style="width:50%; background: #E5E5E5">
+							    		<div style="margin-left: 30px; margin-right: 7.5px" class="paragrafointro">
+											 Uccelli
+											 <br>
+											 <br>
+											 <br>
+											 <br>
+											 <br>
+											 <br>
+											 <br>
+										</div>
+										<div class="colorblue colorblueL">
+							    			<img src="img_archivio/Uccelli_intro_1.jpg" width="100%" height="100%">	
+							    		</div> 		
+										<div style="margin-left: 30px; margin-right: 7.5px; margin-bottom: 30px" class="paragrafotesto">
+											 In base a diversi criteri di classificazione, il numero di specie di uccelli conosciute oscilla fra le 9000 e le 10500, delle quali almeno 120 si sono estinte in tempi storici.
+											 Gli uccelli hanno ali più o meno sviluppate; gli unici non forniti di ali sono i moa e gli uccelli elefante, entrambi estinti tra l’XI e il XVIII secolo. Le ali consistono di braccia specializzate, e la maggior parte delle specie riesce a volare. Tra gli uccelli non volatori ci sono i ratiti, i pinguini, e varie specie isolane. Certi uccelli, come i pinguini e gli anseriformi, sono nuotatori specializzati. Altri, come i corvidi e i pappagalli, sono tra gli animali più intelligenti, capaci d’utilizzare attrezzi e di lasciare in eredità comportamenti non congeniti, in effetti formando una sorta di cultura.
+										</div>						
+							    	</td>
+							    	<td style="width:50%; background: #E5E5E5">
+							    		<div style="margin-right: 30px; margin-left: 7.5px;" class="paragrafointro">
+											 Gli uccelli (Aves) sono una classe di dinosauri teropodi (dinosauri aviani) altamente specializzati caratterizzati dalla presenza di becchi sdentati e forcule, code corte con pigostilo, corpi ricoperti di piumaggio e ripieni di sacchi aeriferi, dita anteriori fuse, uova dai gusci duri, metabolismi alti e ossa cave ma robuste.
+										</div> 
+										<div class="colorblue colorblueR">
+							    			<img src="img_archivio/Uccelli_intro_2.jpg" width="100%" height="100%">
+							    		</div>	
+										<div style="margin-right: 30px; margin-left: 7.5px; margin-bottom: 30px" class="paragrafotesto">
+											 Molte specie sono migratorie, traversando distanze notevoli annualmente. Gli uccelli sono sociali, comunicando con segnali visuali, richiami, canti, e partecipando in altri comportamenti sociali, inclusi la riproduzione cooperativa, la caccia, la formazione di stormi, e l’assalto cooperativo ai predatori. La maggioranza degli uccelli sono temporaneamente monogami, mentre altri dimostrano comportamenti poligini e (più raramente) poliandri. Le uova sono solitamente covate e incubate nei nidi.
+											 Gli uccelli sono i tetrapodi più abbondanti, con circa diecimila specie (la metà di esse classificate come passeridi). Vivono in quasi tutto il mondo, variando in grandezza da 5 cm per il colibrì di Elena, fino a tre metri per l’uccello elefante. <br>
+											 <span class = "dots"></span> 
+											 <span class = "more">  
+											 I reperti fossili indicano che gli uccelli propriamente detti ebbero origine durante il Cretaceo, circa cento milioni di anni fa. Ci furono però uccelli primitivi al di fuori dal gruppo Avialae che risalivano sino dal periodo Giurassico. Molti di questi uccelli primitivi, come Archaeopteryx, non erano capaci di volo potenziato, e molti ritenevano tratti primitivi come denti e code lunghe.
+											 </span>  
+											 <button class= "read bottonelettura">+ Contenuto</button> 
+										</div> 
+							    	</td>							    	 
+							  	</tr>
+							  	<!-- Sezione -->
+							  	<tr style="border-top: 0.05vw solid #18171C; margin-top:30px; width:100%" class="tr"> 
+							    	<td style="width:50%; background: #E5E5E5">
+							    		<div style="margin-left: 30px; margin-right: 7.5px;" class="paragrafointro">
+											 Uccelli / <br>
+											 Culbianco
+											 <br>
+											 <br>
+											 <div class="segnapostoL">
+							    				<img src="img_archivio/segnaposto.jpg" width="100%" height="100%">	
+							    			 </div> 	
+											<audio id="Verso_Culbianco_audio" loop>
+												<source src="audio/culbianco.mp3"></source>
+											</audio>
+											 <div class="animali VersoCulbianco">▶ Verso Culbianco</div>
+
+											 <audio id="Canto_Culbianco_audio" loop>
+												<source src="audio/culbiancocanto.mp3"></source>
+											</audio>
+											 <div class="animali CantoCulbianco">▶ Canto Culbianco</div> 
+										</div>			
+							    	</td>
+							    	<td style="width:50%; background: #E5E5E5">
+							    		<div style="margin-right: 30px; margin-left: 7.5px;" class="paragrafointro">
+											 Il culbianco (Oenanthe oenanthe) è un uccello passeriforme della famiglia dei Muscicapidi.
+										</div>
+										<div class="colorblue colorblueR">
+							    			<img src="img_archivio/Culbianco_uccello.jpg" width="100%" height="100%">
+							    		</div>	
+							    		<div style="margin-right: 30px; margin-left: 7.5px; margin-bottom: 30px" class="paragrafotesto">
+							    		<div style="font-weight: 500; font-size: 1.4vw; text-indent: 50px;">Descrizione</div>
+											 La lunghezza di questo uccello insettivoro è di circa 14 cm, per 26 grammi di peso. [senza fonte]
+											 Il dimorfismo sessuale è marcato nella stagione riproduttiva: il maschio si presenta con dorso e vertice di colore grigio, remiganti e coda neri, sottopancia bianco, mentre la femmina è di colore marroncino con sopracciglio giallastro.
+											 <div style="font-weight: 500; font-size: 1.4vw; text-indent: 50px;">Distribuzione e habitat</div>
+											 Lo si incontra in tutta Europa, e buona parte di Asia, Africa ed America del Nord; in Italia è visibile nelle zone montagnose, in alcuni rari casi anche sul livello del mare, riserva saline di Priolo (Sicilia) e anche nella piana di Gela in Sicilia [senza fonte]).
+										</div>			
+							    	</td>							    	 
+							  	</tr>
+							  	<!-- Sezione -->
+							  	<tr style="border-top: 0.05vw solid #18171C; margin-top:30px; width:100%" class="tr"> 
+							    	<td style="width:50%; background: #E5E5E5">
+							    		<div style="margin-left: 30px; margin-right: 7.5px;" class="paragrafointro">
+											 Uccelli / <br>
+											 Merlo dal collare
+											 <br>
+											 <br>
+											 <div class="segnapostoL">
+							    				<img src="img_archivio/segnaposto.jpg" width="100%" height="100%">	
+							    			 </div> 	
+											<audio id="Verso_Merlo_audio" loop>
+												<source src="audio/merlodalcollare.mp3"></source>
+											</audio>
+											 <div class="animali VersoMerlo">▶ Verso Merlo dal collare</div>		
+							    	</td>
+							    	<td style="width:50%; background: #E5E5E5">
+							    		<div style="margin-right: 30px; margin-left: 7.5px;" class="paragrafointro">
+											 Il merlo dal collare (Turdus torquatus Linnaeus) è un uccello della famiglia dei Turdidi.
+										</div>
+										<div class="colorblue colorblueR">
+							    			<img src="img_archivio/Merlo_dal_collare.jpg" width="100%" height="100%">
+							    		</div>	
+							    		<div style="margin-right: 30px; margin-left: 7.5px; margin-bottom: 30px" class="paragrafotesto">
+							    			 Le tre sottospecie del merlo dal collare sono distribuite dall’Europa nord-occidentale al Turkmenistan. Il maschio adulto, nerastro o marrone-nerastro, si riconosce per la caratteristica banda pettorale bianca, che manca nella femmina. Uccello territoriale, vivace, nel periodo riproduttivo ha abitudini solitarie, per poi divenire gregario nel resto dell’anno. Come per la maggior parte dei Turdidi, la sua dieta dipende dalle disponibilità offerte dall’ambiente e varia a seconda della stagione: insettivoro durante la stagione riproduttiva e frugivoro in autunno-inverno. La stagione riproduttiva, compresa tra aprile e luglio, varia con la latitudine. I pulcini, accuditi da entrambi i genitori, abbandonano il nido a due settimane di età, ma rimangono nelle vicinanze fino al raggiungimento della completa capacità di volo.
+										</div>			
+							    	</td>							    	 
+							  	</tr>
+
+							  	<!-- Sezione -->
+							  	<tr style="border-top: 0.05vw solid #18171C; margin-top:30px; width:100%" class="tr"> 
+							    	<td style="width:50%; background: #E5E5E5">
+							    		<div style="margin-left: 30px; margin-right: 7.5px;" class="paragrafointro">
+											 Uccelli / <br>
+											 Sordone
+											 <br>
+											 <br>
+											 <div class="segnapostoL">
+							    				<img src="img_archivio/segnaposto.jpg" width="100%" height="100%">	
+							    			 </div> 	
+											<audio id="Verso_Sordone_audio" loop>
+												<source src="audio/Sordone(Prunella collaris).mp3"></source>
+											</audio>
+											 <div class="animali VersoSordone">▶ Verso Sordone</div>		
+							    	</td>
+							    	<td style="width:50%; background: #E5E5E5">
+							    		<div style="margin-right: 30px; margin-left: 7.5px;" class="paragrafointro">
+											 Il sordone (Prunella collaris) è un uccello della famiglia Prunellidae.
+										</div>
+										<div class="colorblue colorblueR">
+							    			<img src="img_archivio/Sordone.jpg" width="100%" height="100%">
+							    		</div>	
+							    		<div style="margin-right: 30px; margin-left: 7.5px; margin-bottom: 30px" class="paragrafotesto">
+							    		<div style="font-weight: 500; font-size: 1.4vw; text-indent: 50px;">Descrizione</div>
+											 È simile a un passero, ma con becco sottile; il folto piumaggio ne rende la silhouette assai compatta. Il colorito bruno è ravvivato dalle strie bruno-rossastre dei fianchi e dalla gola bianca macchiettata di nero, quest’ultima evidente solo negli adulti osservati a breve distanza.
+
+
+											 <div style="font-weight: 500; font-size: 1.4vw; text-indent: 50px;">Verso</div>
+											 Sia il verso di richiamo che il canto ne consentono un’agevole localizzazione; il canto può essere emesso da uno spuntone di roccia oppure in volo e assomiglia a quello dell’allodola.
+										</div>			
+							    	</td>							    	 
+							  	</tr>
+							</tbody>
+							</table>
+				</div>
+			</div>
+				
+				
+				
+
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$(".table_filter").each(function() {
+		     $(this).click(function(){
+			     $(this).toggleClass("active"); 
+
+
+			     	if ($(this).hasClass("active")){
+						var toRemove = '〇';
+						var toReplace = '◉';
+
+				   	 
+					}
+					else{
+						var toRemove = '◉';
+						var toReplace = '〇';
+
+					}
+
+					$(this).html( $(this).text().replace(toRemove,toReplace));
+					$.fn.tableFilter();
+					
+
+
+
+			  }); 
+		});
+
+		$.fn.tableFilter = function(){ 
+			var value =''
+
+		    $(".table_filter").each(function() {
+		    	if ($(this).hasClass("active")){
+		    		if(value != ''){
+		    			var toRemove = '◉';
+		    			value = value +","+ $(this).text().replace(toRemove,'').toLowerCase();
+					}
+					else
+					{
+						var toRemove = '◉';
+						value = $(this).text().replace(toRemove,'').toLowerCase();
+					}
+				}
+			});
+
+
+			var split = value.split(",");
+
+
+
+		   	$("#myTable td").filter(function() {
+		   		var flag = true;
+		   		for (i = 0; i < split.length; i++) {
+			 		if ($(this).text().toLowerCase().indexOf(split[i] ) == -1){
+		   				flag = false
+		   				break;
+		   			}
+			 	}
+
+			 	$(this).toggle(flag)
+			});
+		}
+
+
+
+		$(".table_filter").on("keyup", function() {
+			var value = $(this).val().toLowerCase();
+			$("#myTable tr").filter(function() {
+			 	$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+			});
+		});
+	});
+
+	/*Finestra-filtro*/
+    let acc = document.getElementsByClassName("filter");
+	let i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    
+    this.classList.toggle("active");
+
+    
+    let panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+
+/*Read more*/
+$(document).ready(function(){  
+    $(".read").click(function(){  
+        $(this).prev().toggle();  
+        $(this).siblings('.dots').toggle();  
+        if($(this).text()=='+ Contenuto'){  
+            $(this).text('– Contenuto');  
+        }  
+        else{  
+            $(this).text('+ Contenuto');  
+        }  
+  
+    });  
+});  
+
+	/*Audio*/
+	function audio_on_hover(audio_id, target_class) { 
+		let audio = document.getElementById(audio_id); 
+		let audio_players = document.getElementsByClassName(target_class);
+
+ 	   	let i;
+    	for (i = 0; i < audio_players.length; i++) {
+			audio_players[i].addEventListener("mouseenter", playAudio)
+			audio_players[i].addEventListener("mouseleave", stopAudio)
+		};
+
+
+		function playAudio() { 
+			playPromise = audio.play(); 
+		} 
+
+		function stopAudio() { 
+			if (playPromise !== undefined) {
+				playPromise.then(_ => {
+
+					audio.pause(); 
+					audio.currentTime = 0
+				})
+				.catch(error => {
+
+				});
+			}
+		}
+	} 
+
+	audio_on_hover("Verso_Culbianco_audio" , "VersoCulbianco")
+	audio_on_hover("Canto_Culbianco_audio" , "CantoCulbianco")
+	audio_on_hover("Verso_Merlo_audio" , "VersoMerlo")
+	audio_on_hover("Verso_Sordone_audio" , "VersoSordone")
+
+	
+
+
+
+
+ </script>
+
+
+</body>
+</html>
