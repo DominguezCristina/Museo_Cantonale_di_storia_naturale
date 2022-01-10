@@ -221,14 +221,10 @@
 							  	<td style="width:16.6%;" class="tdstile"></td>
 							    <td style="width:16.6%;" class="tdstile"></td>
 								<td style="width:16.6%;" class="tdstile">
-									<button class="table_filter">
-										〇 Diga
-									</button>
+									<button class="table_filter">〇 Diga</button>
 								</td>
 								<td style="width:16.6%;" class="tdstile">
-									<button class="table_filter">
-										〇 Progetto Diga del Ritom
-									</button>
+									<button class="table_filter">〇 Progetto Diga del Ritom</button>
 								</td>
 								<td style="width:16.6%;" class="tdstile">
 									<button class="table_filter">
@@ -615,7 +611,7 @@
 							    	</td>							    	 
 							  	</tr>
 							  	<!-- Sezione -->
-							  	<tr style="border-top: 0.05vw solid #18171C; margin-top:30px; width:100%" class="tr"> 
+							  	<tr id="scroll" style="border-top: 0.05vw solid #18171C; margin-top:30px; width:100%" class="tr"> 
 							    	<td style="width:50%; background: #E5E5E5">
 							    		<div style="margin-left: 30px; margin-right: 7.5px;" class="paragrafointro">
 											 Diga / <br>
@@ -769,14 +765,13 @@
 						value = $(this).text().replace(toRemove,'').toLowerCase();
 					}
 				}
+
 			});
 
 
 			var split = value.split(",");
 
-
-
-		   	$("#myTable td").filter(function() {
+		   	$("#myTable tr").filter(function() {
 		   		var flag = true;
 		   		for (i = 0; i < split.length; i++) {
 			 		if ($(this).text().toLowerCase().indexOf(split[i] ) == -1){
